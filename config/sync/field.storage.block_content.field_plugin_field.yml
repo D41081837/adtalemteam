@@ -1,0 +1,23 @@
+uuid: daa8a2a7-2422-4244-a332-2f38a863b15e
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+_core:
+  default_config_hash: IPna3q6z4gSbME0H7fmLqAlxeSD3f0i-K0nmDhoXtww
+id: block_content.field_plugin_field
+field_name: field_plugin_field
+entity_type: block_content
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

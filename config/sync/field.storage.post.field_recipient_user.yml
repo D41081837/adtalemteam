@@ -1,0 +1,22 @@
+uuid: 95e96673-7803-4de8-8e9d-ece45656c63e
+langcode: en
+status: true
+dependencies:
+  module:
+    - social_post
+    - user
+_core:
+  default_config_hash: WMOi0guj_gFKthh5CyRn0utEfhcM65CbqX9jeGy2zHY
+id: post.field_recipient_user
+field_name: field_recipient_user
+entity_type: post
+type: entity_reference
+settings:
+  target_type: user
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

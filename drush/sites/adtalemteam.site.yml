@@ -1,0 +1,32 @@
+local:
+   host: 'adtalemteam.local'
+   options: {   }
+   root: '/var/www/adtalemteam/html'
+   uri: 'theshellfamily.local'
+   user: 'vagrant'
+   ssh:
+      options: ''
+prod:
+   host: 'adtalem.team'
+   options: {   }
+   root: '/var/www/adtalem.team/html'
+   uri: 'new.robertshell.com'
+   user: 'root'
+   ssh:
+      options: '-i "${env.home}/.ssh/jenkins"'
+dev:
+   host: 'dev.adtalem.team'
+   options: {   }
+   root: '/var/www/dev.adtalem.team/html'
+   uri: 'dev.adtalem.team'
+   user: 'root'
+   ssh:
+      options: '-i "${env.home}/.ssh/jenkins"'
+test:
+   host: 'stg.adtalem.team'
+   options: {   }
+   root: '/var/www/stg.adtalem.team/html'
+   uri: 'stg.adtalem.team'
+   user: 'root'
+   ssh:
+      options: '-i "${env.home}/.ssh/jenkins"'

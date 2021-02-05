@@ -1,0 +1,16 @@
+uuid: d5f0419d-78c1-43ad-ba70-cf387fe66406
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: NvHTnZn-Y85aABkQEsCNty0XMRlwGDluZy3-KdImiiQ
+id: profile
+label: Profile
+display_label: null
+multiple: false
+registration: false
+roles:
+  authenticated: '0'
+  administrator: '0'
+allow_revisions: false
+new_revision: false

@@ -1,0 +1,27 @@
+uuid: 16d49d8b-0512-4f6f-9687-8b8b4907c5bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.custom_content_list
+    - field.storage.block_content.field_item_amount
+_core:
+  default_config_hash: 84pDBqdrqsQiVYYIk2-EYgkcbbiQiufKtsRux8LDxrk
+id: block_content.custom_content_list.field_item_amount
+field_name: field_item_amount
+entity_type: block_content
+bundle: custom_content_list
+label: 'Number of items'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 5
+default_value_callback: ''
+settings:
+  min: 1
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

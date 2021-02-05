@@ -1,0 +1,21 @@
+uuid: 3c861cfd-b59d-4000-b0ce-ec063c7c39b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.custom_content_list
+    - field.storage.block_content.field_plugin_id
+_core:
+  default_config_hash: T0kY7L_4YOPJU7l50ySVespaSaQOJVKqDlgp9TBvSl8
+id: block_content.custom_content_list.field_plugin_id
+field_name: field_plugin_id
+entity_type: block_content
+bundle: custom_content_list
+label: 'Type of content'
+description: 'Select the type of content which will be shown in this block'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

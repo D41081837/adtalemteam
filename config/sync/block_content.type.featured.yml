@@ -1,0 +1,10 @@
+uuid: ea087ab5-cd69-40e5-b8e6-9390b3f6b469
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: SxIBYagKaLmAIfjHAxNBRfAVgAPYWW2lJQIAf4OCEYs
+id: featured
+label: 'Featured Content'
+revision: 0
+description: 'A list of featured content that can have a title, link, group/node/profile, and description.'

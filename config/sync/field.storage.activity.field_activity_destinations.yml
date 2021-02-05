@@ -1,0 +1,23 @@
+uuid: 828b0db5-b423-4b6b-8a41-4ec50301ba12
+langcode: en
+status: true
+dependencies:
+  module:
+    - activity_creator
+    - options
+_core:
+  default_config_hash: _NjkNkF2ZYgYH0NiNJOohin2jNXHzl_3FXlYECgnexw
+id: activity.field_activity_destinations
+field_name: field_activity_destinations
+entity_type: activity
+type: list_string
+settings:
+  allowed_values: {  }
+  allowed_values_function: activity_creator_field_activity_destinations_allowed_values
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

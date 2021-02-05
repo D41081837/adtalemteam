@@ -1,0 +1,44 @@
+uuid: 62e4cd43-5e7c-4f81-91e5-d099e7ee7328
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.private_message.inbox
+  module:
+    - private_message
+    - text
+_core:
+  default_config_hash: T49nARPshtaO8dImQQbA7lsLVPomuhVyR20tprP1s7U
+id: private_message.private_message.inbox
+targetEntityType: private_message
+bundle: private_message
+mode: inbox
+content:
+  created:
+    label: hidden
+    weight: 0
+    region: content
+    settings:
+      granularity: 1
+      future_format: '@interval hence'
+      past_format: '@interval ago'
+    third_party_settings: {  }
+    type: timestamp_ago
+  message:
+    label: visually_hidden
+    type: text_trimmed
+    weight: 2
+    region: content
+    settings:
+      trim_length: 200
+    third_party_settings: {  }
+  owner:
+    label: hidden
+    type: entity_reference_label
+    weight: 1
+    region: content
+    settings:
+      link: false
+    third_party_settings: {  }
+hidden:
+  search_api_excerpt: true

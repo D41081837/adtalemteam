@@ -1,0 +1,22 @@
+uuid: 26bb6262-5cd9-4bcb-b9d1-1dc3eca0589b
+langcode: en
+status: true
+dependencies:
+  module:
+    - comment
+    - node
+_core:
+  default_config_hash: FcEkK-q4ljgV7BaZKry5lNvR_pKsWPBNvb5GFkkefko
+id: node.field_book_comments
+field_name: field_book_comments
+entity_type: node
+type: comment
+settings:
+  comment_type: comment
+module: comment
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

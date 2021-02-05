@@ -1,0 +1,10 @@
+uuid: c712440f-fcba-41de-9512-73cb15563104
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.token
+label: Token
+targetEntityType: taxonomy_term
+cache: true

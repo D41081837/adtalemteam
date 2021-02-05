@@ -1,0 +1,31 @@
+uuid: 3f18a27f-7482-41bd-b037-31560ae046eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.custom_content_list
+    - field.storage.block_content.field_content_tags
+    - taxonomy.vocabulary.social_tagging
+_core:
+  default_config_hash: 2UoVlpkyrbifc5bHFyKumDI45Pg6ya6gxDP9p4dH-yk
+id: block_content.custom_content_list.field_content_tags
+field_name: field_content_tags
+entity_type: block_content
+bundle: custom_content_list
+label: 'Content tags'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      social_tagging: social_tagging
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

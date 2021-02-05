@@ -1,0 +1,27 @@
+uuid: 96e25d55-72f2-4b3f-a8c2-b44ab60137fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.featured_items
+    - field.field.block_content.featured_items.field_featured_items
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: 7okhaBIj40iNSRbMBKPBrq1LH2WZGdmZ2VEL6vl1tHg
+id: block_content.featured_items.default
+targetEntityType: block_content
+bundle: featured_items
+mode: default
+content:
+  field_featured_items:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  search_api_excerpt: true

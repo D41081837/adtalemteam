@@ -1,0 +1,21 @@
+uuid: 23ae9fa9-a12b-4073-9fef-02942c5b0106
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.custom_content_list
+    - field.storage.block_content.field_plugin_field
+_core:
+  default_config_hash: V6o_dJZ9c7pGV-syFWT0oeX8XxqxDJ1uKORCrZYcwUs
+id: block_content.custom_content_list.field_plugin_field
+field_name: field_plugin_field
+entity_type: block_content
+bundle: custom_content_list
+label: 'Content selection'
+description: 'Further specify how the content should be selected'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

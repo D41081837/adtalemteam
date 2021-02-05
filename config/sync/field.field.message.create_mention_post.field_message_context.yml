@@ -1,0 +1,23 @@
+uuid: 21b155f6-2eb6-40ec-9466-5a2c9946641d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.message.field_message_context
+    - message.template.create_mention_post
+  module:
+    - options
+_core:
+  default_config_hash: 1TDF4x0QKfJjLMTy5NYwAqcgNCP2YYRYo80BjqSDrFk
+id: message.create_mention_post.field_message_context
+field_name: field_message_context
+entity_type: message
+bundle: create_mention_post
+label: field_message_context
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

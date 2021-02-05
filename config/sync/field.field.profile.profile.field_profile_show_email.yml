@@ -1,0 +1,25 @@
+uuid: 75f3a96b-1d95-4357-b91c-3dedace63203
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_profile_show_email
+    - profile.type.profile
+_core:
+  default_config_hash: cwrszORMzrvFoYqbIrlf6omy774AmGOHWfab2LwxnDA
+id: profile.profile.field_profile_show_email
+field_name: field_profile_show_email
+entity_type: profile
+bundle: profile
+label: 'Show email'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

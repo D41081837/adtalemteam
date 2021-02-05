@@ -1,0 +1,13 @@
+uuid: dd01951b-87d1-4955-9759-8f7cf47d8db7
+langcode: en
+status: true
+dependencies:
+  module:
+    - social_user_export
+_core:
+  default_config_hash: PggqMQltR-OpqtEwoREfLDNlzGJdJaQFgGcmn0uhGZM
+id: user_export_user_action
+label: 'Export the selected user(s) to CSV'
+type: user
+plugin: social_user_export_user_action
+configuration: {  }

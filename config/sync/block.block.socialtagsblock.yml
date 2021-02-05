@@ -1,0 +1,31 @@
+uuid: 7dea74bf-2445-46a3-8991-78b62c049ad5
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - social_tagging
+  module:
+    - social_tagging
+    - system
+  theme:
+    - socialblue
+_core:
+  default_config_hash: PlqTnyOXEjHhTnKMslzfSCCoX6UgYb6lCv9-BcvDhLk
+id: socialtagsblock
+theme: socialblue
+region: complementary_top
+weight: 0
+provider: null
+plugin: social_tags_block
+settings:
+  id: social_tags_block
+  label: Tags
+  provider: social_tagging
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: '/node/*'
+    negate: false
+    context_mapping: {  }

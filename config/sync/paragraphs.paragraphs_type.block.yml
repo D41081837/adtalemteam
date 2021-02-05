@@ -1,0 +1,12 @@
+uuid: 84d3fb43-2b5b-44c7-94a0-ea9216e34d02
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: QUgsQFwYhZURsCKd4EbtFduc0rsrhcVI17zTGul9Wns
+id: block
+label: Block
+icon_uuid: null
+icon_default: null
+description: 'Reference some block'
+behavior_plugins: {  }

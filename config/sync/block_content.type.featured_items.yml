@@ -1,0 +1,10 @@
+uuid: 9ec41562-184c-469d-a812-7eb7c5bd1199
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: _wI8Qrhf7vqPYgwzQlR19x_dqbrwzDpE_SE77pWKC2s
+id: featured_items
+label: 'Featured Items'
+revision: 0
+description: 'A list of featured items that can have a title, link, image/icon, and description.'
