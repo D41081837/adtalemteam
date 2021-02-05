@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c813ce86df52a544e802fef94863c6dc",
+    "content-hash": "4969e2a875564402d0de0173a8b49e01",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -150,7 +150,7 @@
             "version": "v3.4.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/twbs/bootstrap.git",
+                "url": "git@github.com:twbs/bootstrap.git",
                 "reference": "68b0d231a13201eb14acd3dc84e51543d16e5f7e"
             },
             "dist": {
@@ -207,12 +207,12 @@
             "version": "9.15.10",
             "source": {
                 "type": "git",
-                "url": "git@github.com:isagalaev/highlight.js.git",
+                "url": "https://github.com/highlightjs/highlight.js.git",
                 "reference": "3026925b1c57c9a9feb0713e663f8d1ef8ff08e9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/isagalaev/highlight.js/zipball/3026925b1c57c9a9feb0713e663f8d1ef8ff08e9",
+                "url": "https://api.github.com/repos/highlightjs/highlight.js/zipball/3026925b1c57c9a9feb0713e663f8d1ef8ff08e9",
                 "reference": "3026925b1c57c9a9feb0713e663f8d1ef8ff08e9"
             },
             "type": "bower-asset"
@@ -222,7 +222,7 @@
             "version": "3.5.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:jquery/jquery-dist.git",
+                "url": "https://github.com/jquery/jquery-dist.git",
                 "reference": "4c0e4becb8263bb5b3e6dadc448d8e7305ef8215"
             },
             "dist": {
@@ -240,7 +240,7 @@
             "version": "1.17.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/mochajs/mocha.git",
+                "url": "git@github.com:mochajs/mocha.git",
                 "reference": "7fc565ee3e225cb7a66bf39ae9c2c05b346675c1"
             },
             "dist": {
@@ -296,7 +296,7 @@
             "version": "4.0.13",
             "source": {
                 "type": "git",
-                "url": "https://github.com/ivaynberg/select2.git",
+                "url": "git@github.com:ivaynberg/select2.git",
                 "reference": "45f2b83ceed5231afa7b3d5b12b58ad335edd82e"
             },
             "dist": {
@@ -350,7 +350,7 @@
             "version": "v0.7.6",
             "source": {
                 "type": "git",
-                "url": "git@github.com:fians/Waves.git",
+                "url": "https://github.com/fians/Waves.git",
                 "reference": "1985b7e18327f86f1bb640efe3a2ab4b4fea4078"
             },
             "dist": {
@@ -413,12 +413,12 @@
             "version": "v1.5.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/clue/php-stream-filter.git",
+                "url": "https://github.com/clue/stream-filter.git",
                 "reference": "aeb7d8ea49c7963d3b581378955dbf5bc49aa320"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/clue/php-stream-filter/zipball/aeb7d8ea49c7963d3b581378955dbf5bc49aa320",
+                "url": "https://api.github.com/repos/clue/stream-filter/zipball/aeb7d8ea49c7963d3b581378955dbf5bc49aa320",
                 "reference": "aeb7d8ea49c7963d3b581378955dbf5bc49aa320",
                 "shasum": ""
             },
@@ -2509,6 +2509,7 @@
                 "reflection",
                 "static"
             ],
+            "abandoned": "roave/better-reflection",
             "time": "2020-03-27T11:06:43+00:00"
         },
         {
@@ -6664,6 +6665,55 @@
                 "php"
             ],
             "time": "2020-03-25T18:49:23+00:00"
+        },
+        {
+            "name": "geerlingguy/drupal-vm",
+            "version": "6.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/geerlingguy/drupal-vm.git",
+                "reference": "edf73dd6d2508cb70095876c0d86b2b7fe47207d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/geerlingguy/drupal-vm/zipball/edf73dd6d2508cb70095876c0d86b2b7fe47207d",
+                "reference": "edf73dd6d2508cb70095876c0d86b2b7fe47207d",
+                "shasum": ""
+            },
+            "type": "vm",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeff Geerling",
+                    "homepage": "https://www.jeffgeerling.com"
+                },
+                {
+                    "name": "Oskar Schöldström",
+                    "homepage": "http://oxy.fi"
+                }
+            ],
+            "description": "A VM for local Drupal development, built with Vagrant + Ansible",
+            "homepage": "https://www.drupalvm.com",
+            "keywords": [
+                "drupal",
+                "vagrant",
+                "virtual machine",
+                "vm"
+            ],
+            "funding": [
+                {
+                    "url": "https://github.com/geerlingguy",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/geerlingguy",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2020-10-27T21:38:23+00:00"
         },
         {
             "name": "goalgorilla/open_social",
@@ -11552,12 +11602,12 @@
             "version": "1.9.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/webmozart/assert.git",
+                "url": "https://github.com/webmozarts/assert.git",
                 "reference": "bafc69caeb4d49c39fd0779086c03a3738cbb389"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmozart/assert/zipball/bafc69caeb4d49c39fd0779086c03a3738cbb389",
+                "url": "https://api.github.com/repos/webmozarts/assert/zipball/bafc69caeb4d49c39fd0779086c03a3738cbb389",
                 "reference": "bafc69caeb4d49c39fd0779086c03a3738cbb389",
                 "shasum": ""
             },

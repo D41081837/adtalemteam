@@ -62,6 +62,7 @@ permissions:
   - 'view groups on my profile'
   - 'view groups on other profiles'
   - 'view like widget'
+  - 'view media'
   - 'view node.book.field_content_visibility:community content'
   - 'view node.book.field_content_visibility:public content'
   - 'view node.event.field_content_visibility:community content'

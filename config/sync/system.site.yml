@@ -1,6 +1,6 @@
 uuid: 49b78228-60ac-421f-8fd0-08fa87018ac3
-name: 'The Shell Family'
-mail: robert@robertshell.com
+name: 'Adtalem Web Technologies Team'
+mail: robert.shell@adtalem.com
 slogan: ''
 page:
   403: ''
@@ -12,3 +12,5 @@ langcode: en
 default_langcode: en
 _core:
   default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
+show_mail_in_messages: 0
+mail_notification: ''

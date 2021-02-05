@@ -12,8 +12,8 @@
         "goalgorilla/open_social": "~9.0",
         "php": "^7.2",
         "monolog/monolog": "^1.17",
-        "geerlinguy/drupal-vm": "^6.0",
-        "drush/drush": "^10.3"
+        "drush/drush": "^10.3",
+        "geerlingguy/drupal-vm": "^6.0"
     },
     "repositories": {
         "drupal": {
@@ -81,6 +81,11 @@
         "composer-exit-on-patch-failure": false,
         "patchLevel": {
             "drupal/core": "-p2"
+        },
+        "patches": {
+            "drupal/core": {
+                "mergeContexts has a dependency on CacheContextsManager": "https://www.drupal.org/files/issues/2019-11-25/drupal-core-2999148-8.patch"
+            }
         }
     }
 }

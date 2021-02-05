@@ -13,6 +13,7 @@ permissions:
   - 'access content search'
   - 'access group search'
   - 'view like widget'
+  - 'view media'
   - 'view node.book.field_content_visibility:public content'
   - 'view node.event.field_content_visibility:public content'
   - 'view node.landing_page.field_content_visibility:public content'
