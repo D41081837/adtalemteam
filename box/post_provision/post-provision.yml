@@ -1,0 +1,120 @@
+---
+- name: Ensure the dashboard directory exists.
+  file:
+    path: "{{ dashboard_install_dir }}"
+    state: directory
+    mode: 0755
+
+- name: Check if ssh key file is present.
+  stat: "path={{ dashboard_install_dir | default('/var/www/dashboard') }}"
+  register: dash_directory
+  connection: local
+  become: no
+
+- name: Copy dashboard page into place.
+  template:
+    src: "{{ dashboard_template_dir }}/dashboard.html.j2"
+    dest: "{{ dashboard_install_dir }}/index.html"
+    mode: 0644
+    owner: "{{ drupalvm_user }}"
+    group: "{{ drupalvm_user }}"
+  become: no
+  when: dash_directory.stat.exists
+
+- name: Copy dashboard page into place.
+  shell: >
+    rm -rf {{ dashboard_install_dir }}/index.html
+    cp -r "{{ dashboard_template_dir }}/dashboard.html.j2" {{ dashboard_install_dir }}
+    creates={{ dashboard_install_dir }}/index.html
+
+- name: Check if insecure ssh key file is present.
+  stat: "path={{ insecure_ssh_key_path | default('~/.vagrant.d/insecure_private_key') }}"
+  register: insecure_ssh_key_file
+  connection: local
+  become: no
+
+- name: Copy insecure ssh key file from host into Drupal VM.
+  copy:
+    src: "{{ insecure_ssh_key_path | default('~/.vagrant.d/insecure_private_key') }}"
+    dest: "{{ insecure_ssh_dest_path }}"
+    mode: 0600
+    owner: "{{ drupalvm_user }}"
+    group: "{{ drupalvm_user }}"
+  become: no
+  when: insecure_ssh_key_file.stat.exists
+
+- name: Check if secure ssh key file is present.
+  stat: "path={{ secure_ssh_key_path | default('setup/secure_private_key') }}"
+  register: secure_ssh_key_file
+  connection: local
+  become: no
+
+- name: Copy secure ssh key file from host into Drupal VM.
+  copy:
+    src: "{{ secure_ssh_key_path | default('setup/secure_private_key') }}"
+    dest: "{{ secure_ssh_dest_path }}"
+    mode: 0644
+    owner: "{{ drupalvm_user }}"
+    group: "{{ drupalvm_user }}"
+  become: no
+  when: secure_ssh_key_file.stat.exists
+
+# Copy custom bash_profile to home directory.
+- name: Copy bash_profile file from host into Drupal VM.
+  copy:
+    src: "{{ bash_profile_path | default('setup/bash_profile') }}"
+    dest: "{{ bash_profile_dest | default('/home/vagrant/.bash_profile') }}"
+    mode: 0644
+    owner: "{{ drupalvm_user }}"
+    group: "{{ drupalvm_user }}"
+  become: no
+
+# Setup SOLR cores for each site.
+#
+# This assumes
+# vendor/geerlingguy/drupal-vm/provisioning/roles/geerlingguy.solr/tasks/cores.yml
+# is being run before this. We do it separately to ensure we use the SOLR
+# configs provided by the Drupal module.
+-
+- name: Include vars of config yaml file into vm_config
+  include_vars:
+    file:  "../config.yml"
+    name: vm_config
+
+#- name: "Download and extract SOLR config for Drupal"
+#  unarchive:
+#    src: "https://ftp.drupal.org/files/projects/search_api_solr-8.x-1.x-dev.tar.gz"
+#    dest: "/home/solr"
+#    remote_src: yes
+#
+#- name: "Ensure Solr conf directories exist."
+#  file:
+#    path: "{{ solr_home }}/data/{{ item }}/conf"
+#    state: directory
+#    owner: "{{ solr_user }}"
+#    group: "{{ solr_user }}"
+#    recurse: yes
+#  when: "item not in solr_cores_current.content"
+#  with_items: "{{ solr_cores }}"
+#
+#- name: "Create configured cores."
+#  shell: "{{ solr_install_path }}/bin/solr create -c {{ item.key }} -p {{ solr_port }} -d /home/solr/search_api_solr/solr-conf/5.x"
+#  when: "item.key not in solr_cores_current.content"
+#  with_dict: "{{ vm_config['robertshell_sites'] }}"
+#  become: yes
+#  become_user: "{{ solr_user }}"
+#
+#- name: "Adjust the auto commit time so index changes are committed in 1s"
+#  replace:
+#    path: "/var/solr/data/{{ item.key }}/conf/solrconfig.xml"
+#    regexp: "<maxTime>[^<]*</maxTime>"
+#    replace: "<maxTime>1000</maxTime>"
+#  become: yes
+#  when: "item.key not in solr_cores_current.content"
+#  with_dict: "{{ vm_config['robertshell_sites'] }}"
+#  notify: restart solr
+
+- name: Regenerate Drush aliases.
+  command: "{{ drush_local_path }} init -y"
+  args:
+    chdir: "{{ drupal_core_path }}"

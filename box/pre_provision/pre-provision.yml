@@ -1,0 +1,91 @@
+---
+# Dynamically create vhosts and databases using the inventory for this box.
+#
+# Apache vhosts are created using all hostnames for this box, setting the
+# docroot to the host's "documentroot_dir" variable. MySQL databases, users,
+# and passwords are created using the "dbname" variable.
+#
+# IMPORTANT! This assumes repositories_dir, documentroot_subdir, and dbname are defiend for each host's vars.
+#
+
+- name: Copy dashboard page into place.
+  template:
+    src: "{{ dashboard_template_dir }}/dashboard.html.j2"
+    dest: "{{ dashboard_install_dir }}/index.html"
+    mode: 0644
+    owner: "{{ drupalvm_user }}"
+    group: "{{ drupalvm_user }}"
+
+- name: Create private files directory
+  file:
+    path: "{{ drupal_composer_install_dir }}/files/private"
+    state: directory
+    mode: 0755
+    owner: "{{ drupalvm_user }}"
+    group: "{{ drupalvm_user }}"
+
+# Dynamically create vhosts and databases using the inventory for this box.
+#
+# Apache vhosts are created using all hostnames for this box, setting the
+# docroot to the host's "documentroot_dir" variable. MySQL databases, users,
+# and passwords are created using the "dbname" variable.
+#
+# IMPORTANT! This assumes repositories_dir, documentroot_subdir, and dbname are defiend for each host's vars.
+#
+-
+- name: Include vars of config yaml file into vm_config
+  include_vars:
+    file: "../config.yml"
+    name: vm_config
+
+#- name: Populate apache_vhosts variable based off of vm
+#  set_fact:
+#    apache_vhosts: "{{ apache_vhosts + [{
+#      'servername': vm_config['robertshell_sites'][item]['servername'],
+#      'serveralias': vm_config['robertshell_sites'][item]['serveralias'],
+#      'serverenv': vm_config['robertshell_sites'][item]['serverenv'],
+#      'documentroot': vm_config['robertshell_sites'][item]['documentroot'],
+#      'extra_parameters': apache_vhost_php_fpm_parameters
+#    }] }}"
+#  with_items: "{{ vm_config['robertshell_sites'] }}"
+#
+#- name: Populate apache_vhosts_ssl variable
+#  set_fact:
+#    apache_vhosts_ssl: "{{ apache_vhosts_ssl + [{
+#      'servername': vm_config['robertshell_sites'][item]['servername'],
+#      'serveralias': vm_config['robertshell_sites'][item]['serveralias'],
+#      'serverenv': vm_config['robertshell_sites'][item]['serverenv'],
+#      'documentroot': vm_config['robertshell_sites'][item]['documentroot'],
+#      'certificate_file': '/etc/ssl/certs/ssl-cert-snakeoil.pem',
+#      'certificate_key_file': '/etc/ssl/private/ssl-cert-snakeoil.key',
+#      'extra_parameters': apache_vhost_php_fpm_parameters
+#    }] }}"
+#  with_items: "{{ vm_config['robertshell_sites'] }}"
+
+- name: Populate mysql_databases variable
+  set_fact:
+    mysql_databases: "{{ mysql_databases + [{
+      'name': item.key,
+      'encoding': 'utf8mb4',
+      'collation': 'utf8mb4_general_ci'
+    }] }}"
+  with_dict: "{{ vm_config['robertshell_sites'] }}"
+
+- name: Populate mysql_users variable
+  set_fact:
+    mysql_users: "{{ mysql_users + [{
+      'name': item.key,
+      'host': '%',
+      'password': item.key,
+      'priv': item.key + '.*:ALL'
+    }] }}"
+  with_dict: "{{ vm_config['robertshell_sites'] }}"
+
+- name: Create private files directory
+  file:
+    path: "{{ drupal_composer_install_dir }}/files/private/{{ item.key }}"
+    state: directory
+    mode: 0755
+    owner: "{{ drupalvm_user }}"
+    group: "{{ drupalvm_user }}"
+  with_dict: "{{ vm_config['robertshell_sites'] }}"

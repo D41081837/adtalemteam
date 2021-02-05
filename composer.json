@@ -12,7 +12,7 @@
         "goalgorilla/open_social": "~9.0",
         "php": "^7.2",
         "monolog/monolog": "^1.17",
-        "drush/drush": "^10.3",
+        "drush/drush": "^9.7",
         "geerlingguy/drupal-vm": "^6.0"
     },
     "repositories": {
@@ -27,6 +27,10 @@
         "composer-patches": {
             "type": "vcs",
             "url": "https://github.com/vardot/composer-patches"
+        },
+        "drupal-vm": {
+            "type": "vcs",
+            "url": "https://github.com/geerlingguy/drupal-vm.git"
         },
         "asset-packagist": {
             "type": "composer",
