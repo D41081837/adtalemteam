@@ -1,32 +1,33 @@
-local:
-   host: 'adtalemteam.local'
-   options: {   }
-   root: '/var/www/adtalemteam/html'
-   uri: 'theshellfamily.local'
-   user: 'vagrant'
-   ssh:
-      options: ''
-prod:
-   host: 'adtalem.team'
-   options: {   }
-   root: '/var/www/adtalem.team/html'
-   uri: 'new.robertshell.com'
-   user: 'root'
-   ssh:
-      options: '-i "${env.home}/.ssh/jenkins"'
+# Ansible managed
 dev:
    host: 'dev.adtalem.team'
-   options: {   }
+   options: {  }
    root: '/var/www/dev.adtalem.team/html'
-   uri: 'dev.adtalem.team'
+   uri: 'adtalemteam.dev'
    user: 'root'
    ssh:
-      options: '-i "${env.home}/.ssh/jenkins"'
+      options: '-o "SendEnv PHP_IDE_CONFIG PHP_OPTIONS XDEBUG_CONFIG" -o PasswordAuthentication=no -i "${env.home}/.ssh/secure_private_key"'
+local:
+   host: 'adtalemteam.local'
+   options: {  }
+   root: '/var/www/adtalemteam/html'
+   uri: 'local.adtalemteam'
+   user: 'vagrant'
+   ssh:
+      options: '-o "SendEnv PHP_IDE_CONFIG PHP_OPTIONS XDEBUG_CONFIG" -o PasswordAuthentication=no -i "${env.home}/.vagrant.d/insecure_private_key"'
+live:
+   host: 'adtalem.team'
+   options: {  }
+   root: '/var/www/adtalem.team/html'
+   uri: 'adtalemteam.live'
+   user: 'root'
+   ssh:
+      options: '-o "SendEnv PHP_IDE_CONFIG PHP_OPTIONS XDEBUG_CONFIG" -o PasswordAuthentication=no -i "${env.home}/.ssh/secure_private_key"'
 test:
    host: 'stg.adtalem.team'
-   options: {   }
+   options: {  }
    root: '/var/www/stg.adtalem.team/html'
-   uri: 'stg.adtalem.team'
+   uri: 'adtalemteam.test'
    user: 'root'
    ssh:
-      options: '-i "${env.home}/.ssh/jenkins"'
+      options: '-o "SendEnv PHP_IDE_CONFIG PHP_OPTIONS XDEBUG_CONFIG" -o PasswordAuthentication=no -i "${env.home}/.ssh/secure_private_key"'

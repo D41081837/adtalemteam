@@ -28,9 +28,9 @@
             "type": "vcs",
             "url": "https://github.com/vardot/composer-patches"
         },
-        "drupal-vm": {
-            "type": "vcs",
-            "url": "https://github.com/robertshell22/drupal-vm.git"
+        "asset-packagist": {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
         }
     },
     "scripts": {

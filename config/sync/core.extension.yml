@@ -21,8 +21,11 @@ module:
   config_update: 0
   crop: 0
   csv_serialization: 0
+  ctools: 0
   datetime: 0
+  datetime_range: 0
   dblog: 0
+  devel: 0
   dropdown: 0
   dynamic_entity_reference: 0
   dynamic_page_cache: 0
@@ -54,6 +57,8 @@ module:
   image_effects: 0
   image_widget_crop: 0
   inline_form_errors: 0
+  jsonapi: 0
+  lazy: 0
   like_and_dislike: 0
   link: 0
   mailsystem: 0
@@ -78,6 +83,11 @@ module:
   select2: 0
   serialization: 0
   social_activity: 0
+  social_api: 0
+  social_auth: 0
+  social_auth_extra: 0
+  social_auth_google: 0
+  social_auth_linkedin: 0
   social_book: 0
   social_book_featured: 0
   social_comment: 0
@@ -139,6 +149,7 @@ module:
   views_ui: 0
   votingapi: 0
   menu_link_content: 1
+  pathauto: 1
   social_private_message: 1
   social_group: 2
   social_group_default_route: 3
