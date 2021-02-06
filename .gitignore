@@ -39,6 +39,7 @@ robots.txt
 */sites/all/libraries/README.txt
 */sites/all/modules/README.txt
 */sites/all/themes/README.txt
+html/.htaccess
 
 ### OSX template
 *.DS_Store
