@@ -2,7 +2,7 @@
 <?php
 // phpcs:ignoreFile
 $alias_locations = [
-  "/var/www/robertshell/scripts/setup/bashrc",
+  "/var/www/adtalemteam/scripts/setup/bashrc",
 ];
 
 foreach ($alias_locations as $alias_location) {

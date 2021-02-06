@@ -2,6 +2,8 @@
 dev:
    host: 'dev.adtalem.team'
    options: {  }
+   paths:
+      drush-script: /var/www/dev.adtalem.team/vendor/drush/drush/drush
    root: '/var/www/dev.adtalem.team/html'
    uri: 'adtalemteam.dev'
    user: 'root'
@@ -10,6 +12,8 @@ dev:
 local:
    host: 'adtalemteam.local'
    options: {  }
+   paths:
+      drush-script: /var/www/adtalemteam/vendor/drush/drush/drush
    root: '/var/www/adtalemteam/html'
    uri: 'local.adtalemteam'
    user: 'vagrant'
@@ -18,6 +22,8 @@ local:
 live:
    host: 'adtalem.team'
    options: {  }
+   paths:
+      drush-script: /var/www/adtalem.team/vendor/drush/drush/drush
    root: '/var/www/adtalem.team/html'
    uri: 'adtalemteam.live'
    user: 'root'
@@ -26,6 +32,8 @@ live:
 test:
    host: 'stg.adtalem.team'
    options: {  }
+   paths:
+      drush-script: /var/www/stg.adtalem.team/vendor/drush/drush/drush
    root: '/var/www/stg.adtalem.team/html'
    uri: 'adtalemteam.test'
    user: 'root'

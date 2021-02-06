@@ -26,14 +26,14 @@ function __refresh_site() {
   echo "---------------------------------------------------------------"
   echo "Syncing the database from production..."
   echo ""
-  /var/www/adtalemteam/vendor/drush/drush/drush @local.dev sql-drop -y && /var/www/adtalemteam/vendor/drush/drush/drush sql-sync -y @prod.dev @self
+  /var/www/adtalemteam/vendor/drush/drush/drush @adtalemteam.local sql-drop -y && /var/www/adtalemteam/vendor/drush/drush/drush sql-sync -y adtalemteam.live @self
   echo "Synced site database: $site"
   echo ""
   echo -e "${BLUE}File Sync${NC}"
   echo "---------------------------------------------------------------"
   echo "Syncing the files from production..."
   echo ""
-  /var/www/adtalemteam/vendor/drush/drush/drush rsync -y @prod.dev:%files/ @self:%files
+  /var/www/adtalemteam/vendor/drush/drush/drush rsync -y @adtalemteam.live:%files/ @self:%files
   echo "Synced site files: $site"
   echo ""
   echo ""

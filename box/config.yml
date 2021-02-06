@@ -92,10 +92,13 @@ drupalvm_cron_jobs: []
 # Drupal VM automatically creates a drush alias file in your ~/.drush folder if
 # this variable is 'true'.
 configure_drush_aliases: true
-drush_aliases_host_template: "templates/drupalvm.aliases.drushrc.php.j2"
-drush_aliases_host_template_yml: "templates/drupalvm.aliases.yml.j2"
-drush_aliases_guest_template: "templates/drupalvm-local.aliases.drushrc.php.j2"
-drush_aliases_guest_template_yml: "templates/drupalvm-local.aliases.yml.j2"
+drush_local_path: "{{ drupal_composer_install_dir }}/{{ drupal_composer_bin_dir }}/drush"
+drush_remote_path: "/var/www/adtalem.team/vendor/drush/drush/drush"
+drush_aliases_template_dir: "{{ post_provision_dir }}/templates"
+drush_aliases_host_template: "../../../../box/post_provision/templates/drupalvm.aliases.drushrc.php.j2"
+drush_aliases_host_template_yml: "../../../../box/post_provision/templates/drupalvm.aliases.yml.j2"
+drush_aliases_guest_template: "../../../../box/post_provision/templates/drupalvm-local.aliases.drushrc.php.j2"
+drush_aliases_guest_template_yml: "../../../../box/post_provision/templates/drupalvm-local.aliases.yml.j2"
 
 # Helper variable to configure the PHP-FPM connection for each Apache
 # VirtualHost in the `apache_vhosts` list.
@@ -149,6 +152,13 @@ apache_mods_enabled:
   - proxy.load
   - proxy_fcgi.load
 
+# MySQL Configuration.
+mysql_root_password: root
+mysql_slow_query_log_enabled: true
+mysql_slow_query_time: 2
+mysql_wait_timeout: 300
+adminer_install_filename: index.php
+
 # MySQL databases and users.
 mysql_databases:
   - name: "{{ vagrant_machine_name }}"
@@ -190,12 +200,14 @@ extra_packages:
   - sqlite
   - imagemagick
   - libmagickwand-dev
+  - libzip4
+  - php7.0-zip
 
 # PHP Configuration. Currently-supported versions: 7.2, 7.3, 7.4.
 # See version-specific notes: http://docs.drupalvm.com/en/latest/configurations/php/
-php_version: "7.2"
+php_version: "7.3"
 php_install_recommends: no
-php_memory_limit: "1024M"
+php_memory_limit: "4096M"
 php_display_errors: "On"
 php_display_startup_errors: "On"
 php_realpath_cache_size: "1024K"
@@ -204,12 +216,16 @@ php_opcache_enabled_in_ini: true
 php_opcache_memory_consumption: "192"
 php_opcache_max_accelerated_files: 4096
 php_max_input_vars: "4000"
+php_post_max_size: "1024M"
+php_upload_max_filesize: "1024M"
+php_ini_template_dir: "{{ post_provision_dir }}/templates"
 
 # Extra packages to install (in addition to distro-specific default lists).
 php_packages_extra:
   - "php{{ php_version }}-bz2"
   - php-imagick
   - php-gd
+  - php-zip
   - "php{{ php_version }}-soap"
   - "php{{ php_version }}-bcmath"
 
@@ -229,15 +245,17 @@ composer_global_packages:
 # Run specified scripts before or after VM is provisioned. Use {{ playbook_dir }}
 # to reference the provisioning/ folder in Drupal VM or {{ config_dir }} to
 # reference the directory where your `config.yml` is.
-post_provision_scripts: []
-  # - "{{ playbook_dir }}/../examples/scripts/configure-solr.sh"
-
-# MySQL Configuration.
-mysql_root_password: root
-mysql_slow_query_log_enabled: true
-mysql_slow_query_time: 2
-mysql_wait_timeout: 300
-adminer_install_filename: index.php
+pre_provision_dir:  "../../../../box/pre_provision"
+post_provision_dir:  "../../../../box/post_provision"
+post_provision_setup_path: "{{ post_provision_dir }}/setup"
+post_provision_template_path: "{{ post_provision_dir }}/templates"
+post_provision_scripts:
+  - "{{ post_provision_dir }}/post-provision.php"
+# - "{{ playbook_dir }}/../examples/scripts/configure-solr.sh"
+pre_provision_tasks_dir:
+  - "{{ pre_provision_dir }}/pre-provision.yml"
+post_provision_tasks_dir:
+  - "{{ post_provision_dir }}/post-provision.yml"
 
 # Node.js configuration (if enabled above).
 # Valid examples: "6.x", "8.x", "10.x", etc.
@@ -275,9 +293,22 @@ solr_version: "7.7.2"
 solr_xms: "64M"
 solr_xmx: "128M"
 
-# Other configuration.
-dashboard_install_dir: /var/www/dashboard
+# SSH configuration.
 known_hosts_path: ~/.ssh/known_hosts
+ssh_home: "{{ drupal_composer_install_dir }}"
+ssh_key_path: "~/.vagrant.d/insecure_private_key"
+insecure_ssh_key_path: "~/.vagrant.d/insecure_private_key"
+secure_ssh_key_path: "{{ post_provision_setup_path }}/secure_private_key"
+ssh_dest_path: "/home/{{ drupalvm_user }}/.ssh/insecure_private_key"
+insecure_ssh_dest_path: "/home/{{ drupalvm_user }}/.ssh/insecure_private_key"
+secure_ssh_dest_path: "/home/{{ drupalvm_user }}/.ssh/secure_private_key"
+bash_profile_path: "{{ post_provision_setup_path }}/bash_profile"
+bash_profile_dest: /home/vagrant/.bash_profile
+bashrc_path: "{{ post_provision_setup_path }}/bashrc"
+bashrc_dest: /home/vagrant/.bashrc
+
+# Dashboard configuration.
+dashboard_template_dir: "{{ post_provision_dir }}/templates"
+dashboard_install_dir: /var/www/dashboard
 hostname_configure: true
 hostname_fqdn: "{{ vagrant_hostname }}"
-ssh_home: "{{ drupal_composer_install_dir }}"
