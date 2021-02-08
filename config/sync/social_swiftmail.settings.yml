@@ -1,0 +1,7 @@
+remove_open_social_branding: true
+template_header:
+  value: ''
+  format: mail_html
+template_footer:
+  value: ''
+  format: mail_html

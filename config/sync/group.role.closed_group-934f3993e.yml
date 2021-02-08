@@ -1,0 +1,17 @@
+uuid: 30ebb423-5f71-45fb-9ca0-93124aeff1aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.closed_group
+  enforced:
+    config:
+      - user.role.analyst
+id: closed_group-934f3993e
+label: Analyst
+weight: 7
+internal: true
+audience: outsider
+group_type: closed_group
+permissions_ui: false
+permissions: {  }

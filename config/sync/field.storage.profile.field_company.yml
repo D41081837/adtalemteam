@@ -1,0 +1,23 @@
+uuid: 6adba4f3-c945-49bc-be11-d25a97d8b3e2
+langcode: en
+status: true
+dependencies:
+  module:
+    - dynamic_entity_reference
+    - profile
+    - taxonomy
+id: profile.field_company
+field_name: field_company
+entity_type: profile
+type: dynamic_entity_reference
+settings:
+  exclude_entity_types: false
+  entity_type_ids:
+    taxonomy_term: taxonomy_term
+module: dynamic_entity_reference
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

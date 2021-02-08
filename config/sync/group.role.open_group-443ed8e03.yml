@@ -1,0 +1,17 @@
+uuid: f79974a1-12bf-4cdc-8f4a-12a1c0fccd28
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.open_group
+  enforced:
+    config:
+      - user.role.manager
+id: open_group-443ed8e03
+label: Manager
+weight: 8
+internal: true
+audience: outsider
+group_type: open_group
+permissions_ui: false
+permissions: {  }

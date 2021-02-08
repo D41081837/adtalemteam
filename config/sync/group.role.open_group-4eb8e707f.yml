@@ -1,0 +1,17 @@
+uuid: 85ace353-e78c-47cd-a16f-d6eaa087575e
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.open_group
+  enforced:
+    config:
+      - user.role.business
+id: open_group-4eb8e707f
+label: Business
+weight: 6
+internal: true
+audience: outsider
+group_type: open_group
+permissions_ui: false
+permissions: {  }

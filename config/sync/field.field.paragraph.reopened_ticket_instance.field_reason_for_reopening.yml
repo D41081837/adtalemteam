@@ -1,0 +1,21 @@
+uuid: ae95979b-4ab5-4505-be9b-59aac0072116
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_reason_for_reopening
+    - paragraphs.paragraphs_type.reopened_ticket_instance
+  module:
+    - text
+id: paragraph.reopened_ticket_instance.field_reason_for_reopening
+field_name: field_reason_for_reopening
+entity_type: paragraph
+bundle: reopened_ticket_instance
+label: 'Reason for Reopening'
+description: 'Enter the reason that the ticket was reopened from the developer’s point of view. Ex: “I forgot to test time zone conversions on the Chamberlain site”'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

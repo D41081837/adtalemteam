@@ -1,0 +1,8 @@
+uuid: 41a5f1e0-f894-4382-b8ff-9a7b6d97b2ee
+langcode: en
+status: true
+dependencies: {  }
+name: Department
+vid: department
+description: 'The department that the user works in.'
+weight: 0

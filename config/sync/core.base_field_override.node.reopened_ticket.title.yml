@@ -1,0 +1,18 @@
+uuid: ff761e4b-ea25-44c9-b5ac-c48e48e3fd74
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.reopened_ticket
+id: node.reopened_ticket.title
+field_name: title
+entity_type: node
+bundle: reopened_ticket
+label: 'Ticket Number'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

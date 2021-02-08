@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.full
+    - field.field.user.user.field_department
   module:
     - user
 _core:
@@ -12,13 +13,33 @@ id: user.user.full
 targetEntityType: user
 bundle: user
 mode: full
-content: {  }
+content:
+  groups_type_flexible_group:
+    label: above
+    weight: -5
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  groups_type_secret_group:
+    label: above
+    weight: -5
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
 hidden:
+  business_profile_profiles: true
+  field_department: true
   groups: true
   groups_type_closed_group: true
   groups_type_open_group: true
   groups_type_public_group: true
+  linked_username: true
   member_for: true
+  private_message_link: true
   profile_main: true
   profile_profile: true
   profile_profiles: true

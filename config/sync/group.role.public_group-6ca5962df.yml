@@ -1,0 +1,17 @@
+uuid: 33fbab2e-658c-48f9-95b2-28bccf2fd3fe
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.public_group
+  enforced:
+    config:
+      - user.role.developer
+id: public_group-6ca5962df
+label: Developer
+weight: 5
+internal: true
+audience: outsider
+group_type: public_group
+permissions_ui: false
+permissions: {  }

@@ -1,0 +1,8 @@
+uuid: 01fbdb42-7af8-4182-9584-357b0a52a487
+langcode: en
+status: true
+dependencies: {  }
+name: Company
+vid: organization
+description: 'Companies or organizations that users work for.'
+weight: 0

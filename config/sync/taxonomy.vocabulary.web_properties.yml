@@ -1,0 +1,8 @@
+uuid: 3089cf0b-1204-4ce0-bf8f-3193de6ce89a
+langcode: en
+status: true
+dependencies: {  }
+name: 'Web Property'
+vid: web_properties
+description: 'The sites that we work on.'
+weight: 0

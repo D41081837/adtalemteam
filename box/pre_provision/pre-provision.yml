@@ -28,31 +28,3 @@
   include_vars:
     file: "../config.yml"
     name: vm_config
-
-- name: Populate mysql_databases variable
-  set_fact:
-    mysql_databases: "{{ mysql_databases + [{
-      'name': item.key,
-      'encoding': 'utf8mb4',
-      'collation': 'utf8mb4_general_ci'
-    }] }}"
-  with_dict: "{{ vm_config['robertshell_sites'] }}"
-
-- name: Populate mysql_users variable
-  set_fact:
-    mysql_users: "{{ mysql_users + [{
-      'name': item.key,
-      'host': '%',
-      'password': item.key,
-      'priv': item.key + '.*:ALL'
-    }] }}"
-  with_dict: "{{ vm_config['robertshell_sites'] }}"
-
-- name: Create private files directory
-  file:
-    path: "{{ drupal_composer_install_dir }}/files/private/{{ item.key }}"
-    state: directory
-    mode: 0755
-    owner: "{{ drupalvm_user }}"
-    group: "{{ drupalvm_user }}"
-  with_dict: "{{ vm_config['robertshell_sites'] }}"

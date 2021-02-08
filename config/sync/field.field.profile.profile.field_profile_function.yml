@@ -11,9 +11,9 @@ id: profile.profile.field_profile_function
 field_name: field_profile_function
 entity_type: profile
 bundle: profile
-label: Function
+label: 'Job Title'
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

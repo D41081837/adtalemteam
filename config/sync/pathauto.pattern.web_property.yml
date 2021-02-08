@@ -1,0 +1,23 @@
+uuid: 7472da73-2c2f-4013-9e1a-9db40c32cda5
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: web_property
+label: 'Web Property'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'sites/[term:name]'
+selection_criteria:
+  963eb56e-90f4-4966-9ce5-0befe5c5aeba:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      web_properties: web_properties
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 963eb56e-90f4-4966-9ce5-0befe5c5aeba
+selection_logic: and
+weight: -5
+relationships: {  }

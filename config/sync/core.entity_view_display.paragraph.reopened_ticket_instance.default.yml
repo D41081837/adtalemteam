@@ -1,0 +1,69 @@
+uuid: 2ca60836-c665-485e-bcc5-fe7e158abacd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.reopened_ticket_instance.field_affected_sites
+    - field.field.paragraph.reopened_ticket_instance.field_date_reopened
+    - field.field.paragraph.reopened_ticket_instance.field_environment
+    - field.field.paragraph.reopened_ticket_instance.field_reason_for_failure
+    - field.field.paragraph.reopened_ticket_instance.field_reason_for_reopening
+    - field.field.paragraph.reopened_ticket_instance.field_reopened_by
+    - paragraphs.paragraphs_type.reopened_ticket_instance
+  module:
+    - datetime
+    - text
+id: paragraph.reopened_ticket_instance.default
+targetEntityType: paragraph
+bundle: reopened_ticket_instance
+mode: default
+content:
+  field_affected_sites:
+    weight: 5
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_date_reopened:
+    weight: 0
+    label: inline
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_environment:
+    weight: 1
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_reason_for_failure:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_reason_for_reopening:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_reopened_by:
+    weight: 4
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  search_api_excerpt: true

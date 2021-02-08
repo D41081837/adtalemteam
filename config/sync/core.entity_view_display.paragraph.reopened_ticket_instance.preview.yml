@@ -1,0 +1,58 @@
+uuid: e2571c35-7f22-4b57-95bd-1eea255d26a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.reopened_ticket_instance.field_affected_sites
+    - field.field.paragraph.reopened_ticket_instance.field_date_reopened
+    - field.field.paragraph.reopened_ticket_instance.field_environment
+    - field.field.paragraph.reopened_ticket_instance.field_reason_for_failure
+    - field.field.paragraph.reopened_ticket_instance.field_reason_for_reopening
+    - field.field.paragraph.reopened_ticket_instance.field_reopened_by
+    - paragraphs.paragraphs_type.reopened_ticket_instance
+  module:
+    - datetime
+    - text
+id: paragraph.reopened_ticket_instance.preview
+targetEntityType: paragraph
+bundle: reopened_ticket_instance
+mode: preview
+content:
+  field_date_reopened:
+    weight: 0
+    label: inline
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_environment:
+    weight: 1
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_reason_for_failure:
+    weight: 2
+    label: above
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    type: text_trimmed
+    region: content
+  field_reopened_by:
+    weight: 3
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  field_affected_sites: true
+  field_reason_for_reopening: true
+  search_api_excerpt: true

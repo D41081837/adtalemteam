@@ -1,0 +1,16 @@
+uuid: 3d767e06-d0b7-44f4-83c8-4623943d21c9
+langcode: en
+status: true
+dependencies: {  }
+id: jira_rest_default
+label: 'Adtalem Team Jira'
+description: null
+instanceurl: 'https://adtalem.atlassian.net:8443'
+credential_provider: key_password_only
+credentials:
+  key_password_only:
+    username: robert.shell.adtalem@gmail.com
+    password: pass
+api_version: '2'
+close_issue_transititon_id: '2'
+resolve_issue_transition_id: 5

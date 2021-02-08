@@ -1,0 +1,19 @@
+uuid: 50f0625a-3639-4ab0-a1ac-6f57f7c7a759
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ticket_title
+    - node.type.reopened_ticket
+id: node.reopened_ticket.field_ticket_title
+field_name: field_ticket_title
+entity_type: node
+bundle: reopened_ticket
+label: 'Ticket Title'
+description: 'Enter the ticket''s title from Jira.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,22 @@
+uuid: 6cbb37cf-3afa-4927-bae3-62570efea531
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: reopened_ticket
+label: 'Reopened Ticket'
+type: 'canonical_entities:node'
+pattern: 'tickets/reopened/[node:title]'
+selection_criteria:
+  d303f079-60cc-4921-8b58-f77e3ab2ca7e:
+    id: node_type
+    bundles:
+      reopened_ticket: reopened_ticket
+    negate: false
+    context_mapping:
+      node: node
+    uuid: d303f079-60cc-4921-8b58-f77e3ab2ca7e
+selection_logic: and
+weight: -5
+relationships: {  }

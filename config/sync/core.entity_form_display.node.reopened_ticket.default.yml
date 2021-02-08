@@ -1,0 +1,109 @@
+uuid: 908d713e-64b6-4ca2-a5f0-963fd595b9d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.reopened_ticket.field_developer
+    - field.field.node.reopened_ticket.field_failed_forward
+    - field.field.node.reopened_ticket.field_notes
+    - field.field.node.reopened_ticket.field_reopened_instance
+    - field.field.node.reopened_ticket.field_sprint_number
+    - field.field.node.reopened_ticket.field_ticket_number
+    - field.field.node.reopened_ticket.field_ticket_title
+    - node.type.reopened_ticket
+  module:
+    - dynamic_entity_reference
+    - inline_entity_form
+    - text
+id: node.reopened_ticket.default
+targetEntityType: node
+bundle: reopened_ticket
+mode: default
+content:
+  field_developer:
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 40
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: dynamic_entity_reference_default
+    region: content
+  field_failed_forward:
+    weight: 6
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_notes:
+    weight: 7
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_reopened_instance:
+    type: inline_entity_form_simple
+    weight: 4
+    settings:
+      form_mode: default
+      revision: true
+      label_singular: ''
+      label_plural: ''
+      override_labels: false
+      collapsible: false
+      collapsed: false
+    third_party_settings: {  }
+    region: content
+  field_sprint_number:
+    weight: 3
+    settings:
+      match_operator: CONTAINS
+      size: 40
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+    type: dynamic_entity_reference_default
+    region: content
+  field_ticket_number:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: WT-
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_ticket_title:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 8
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  groups: true
+  path: true
+  promote: true
+  social_tagging: true
+  sticky: true
+  uid: true

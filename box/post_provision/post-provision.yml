@@ -69,50 +69,10 @@
     group: "{{ drupalvm_user }}"
   become: no
 
-# Setup SOLR cores for each site.
-#
-# This assumes
-# vendor/geerlingguy/drupal-vm/provisioning/roles/geerlingguy.solr/tasks/cores.yml
-# is being run before this. We do it separately to ensure we use the SOLR
-# configs provided by the Drupal module.
--
 - name: Include vars of config yaml file into vm_config
   include_vars:
     file:  "../config.yml"
     name: vm_config
-
-#- name: "Download and extract SOLR config for Drupal"
-#  unarchive:
-#    src: "https://ftp.drupal.org/files/projects/search_api_solr-8.x-1.x-dev.tar.gz"
-#    dest: "/home/solr"
-#    remote_src: yes
-#
-#- name: "Ensure Solr conf directories exist."
-#  file:
-#    path: "{{ solr_home }}/data/{{ item }}/conf"
-#    state: directory
-#    owner: "{{ solr_user }}"
-#    group: "{{ solr_user }}"
-#    recurse: yes
-#  when: "item not in solr_cores_current.content"
-#  with_items: "{{ solr_cores }}"
-#
-#- name: "Create configured cores."
-#  shell: "{{ solr_install_path }}/bin/solr create -c {{ item.key }} -p {{ solr_port }} -d /home/solr/search_api_solr/solr-conf/5.x"
-#  when: "item.key not in solr_cores_current.content"
-#  with_dict: "{{ vm_config['robertshell_sites'] }}"
-#  become: yes
-#  become_user: "{{ solr_user }}"
-#
-#- name: "Adjust the auto commit time so index changes are committed in 1s"
-#  replace:
-#    path: "/var/solr/data/{{ item.key }}/conf/solrconfig.xml"
-#    regexp: "<maxTime>[^<]*</maxTime>"
-#    replace: "<maxTime>1000</maxTime>"
-#  become: yes
-#  when: "item.key not in solr_cores_current.content"
-#  with_dict: "{{ vm_config['robertshell_sites'] }}"
-#  notify: restart solr
 
 - name: Regenerate Drush aliases.
   command: "{{ drush_local_path }} init -y"

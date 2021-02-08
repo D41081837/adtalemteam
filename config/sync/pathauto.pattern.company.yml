@@ -1,0 +1,23 @@
+uuid: 96d45f5e-f4f3-4d09-9df7-70836a779e71
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: company
+label: Company
+type: 'canonical_entities:taxonomy_term'
+pattern: 'companies/[term:name]'
+selection_criteria:
+  0dd8efe0-91b7-4a94-8c34-cd1e7184e519:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      organization: organization
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 0dd8efe0-91b7-4a94-8c34-cd1e7184e519
+selection_logic: and
+weight: -5
+relationships: {  }

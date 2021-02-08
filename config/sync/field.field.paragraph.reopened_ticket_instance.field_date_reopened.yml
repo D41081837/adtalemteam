@@ -1,0 +1,24 @@
+uuid: f3a5325d-80db-4800-8645-c54256f6fe16
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_date_reopened
+    - paragraphs.paragraphs_type.reopened_ticket_instance
+  module:
+    - datetime
+id: paragraph.reopened_ticket_instance.field_date_reopened
+field_name: field_date_reopened
+entity_type: paragraph
+bundle: reopened_ticket_instance
+label: 'Date Reopened'
+description: 'Enter the date that the ticket was reopened on. '
+required: true
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

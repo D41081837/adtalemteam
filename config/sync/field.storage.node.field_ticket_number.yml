@@ -1,0 +1,21 @@
+uuid: 1d5a55d2-d1a9-42f6-b666-5c8f52908d96
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_ticket_number
+field_name: field_ticket_number
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

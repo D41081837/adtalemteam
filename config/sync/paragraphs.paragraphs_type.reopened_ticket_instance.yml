@@ -1,0 +1,10 @@
+uuid: bed25a06-47fb-4d24-a70b-8550a1a881c5
+langcode: en
+status: true
+dependencies: {  }
+id: reopened_ticket_instance
+label: 'Reopened Ticket Instance'
+icon_uuid: null
+icon_default: null
+description: 'An instance of a tickets reopening.'
+behavior_plugins: {  }

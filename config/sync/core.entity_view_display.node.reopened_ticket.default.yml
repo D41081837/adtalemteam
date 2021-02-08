@@ -1,0 +1,93 @@
+uuid: db4c9ab1-5b47-407a-b66c-61192ff0aabd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.reopened_ticket.field_developer
+    - field.field.node.reopened_ticket.field_failed_forward
+    - field.field.node.reopened_ticket.field_notes
+    - field.field.node.reopened_ticket.field_reopened_instance
+    - field.field.node.reopened_ticket.field_sprint_number
+    - field.field.node.reopened_ticket.field_ticket_number
+    - field.field.node.reopened_ticket.field_ticket_title
+    - node.type.reopened_ticket
+  module:
+    - dynamic_entity_reference
+    - entity_reference_revisions
+    - text
+    - user
+id: node.reopened_ticket.default
+targetEntityType: node
+bundle: reopened_ticket
+mode: default
+content:
+  field_developer:
+    weight: 3
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: dynamic_entity_reference_label
+    region: content
+  field_failed_forward:
+    weight: 5
+    label: inline
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_notes:
+    weight: 6
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_reopened_instance:
+    type: entity_reference_revisions_entity_view
+    weight: 4
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_sprint_number:
+    weight: 2
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: dynamic_entity_reference_label
+    region: content
+  field_ticket_number:
+    weight: 0
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_ticket_title:
+    weight: 1
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  flag_follow_content: true
+  groups: true
+  groups_type_closed_group: true
+  groups_type_flexible_group: true
+  groups_type_open_group: true
+  groups_type_public_group: true
+  groups_type_secret_group: true
+  links: true
+  private_message_link: true
+  search_api_excerpt: true
+  social_tagging: true

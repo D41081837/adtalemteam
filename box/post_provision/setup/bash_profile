@@ -1,7 +1,2 @@
 source ~/.profile
 source ~/.setup_vars
-
-#   -----------------------------
-#   5. START SETUP
-#   -----------------------------
-#bash /var/www/adtalemteam/scripts/setup-sync.sh

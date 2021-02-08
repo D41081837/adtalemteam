@@ -1,0 +1,17 @@
+uuid: 349c3046-0e30-4fbf-9e62-131f151fbf35
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.flexible_group
+  enforced:
+    config:
+      - user.role.analyst
+id: flexible_group-934f3993e
+label: Analyst
+weight: 7
+internal: true
+audience: outsider
+group_type: flexible_group
+permissions_ui: false
+permissions: {  }

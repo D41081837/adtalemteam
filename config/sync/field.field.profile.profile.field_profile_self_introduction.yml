@@ -13,8 +13,8 @@ id: profile.profile.field_profile_self_introduction
 field_name: field_profile_self_introduction
 entity_type: profile
 bundle: profile
-label: 'Self introduction'
-description: ''
+label: 'About Me'
+description: 'Share an interesting short description about you and your background. It can also be funny!'
 required: false
 translatable: false
 default_value: {  }

@@ -1,6 +1,6 @@
-theme: default
+theme: socialblue
 defaults:
-  sender: social_swiftmailer
+  sender: swiftmailer
   formatter: social_swiftmailer
 _core:
   default_config_hash: IhwTepsVwtbtbcT5GzQKhCXDCRvbk3MNkWqPiuiZ10s
@@ -9,4 +9,4 @@ modules:
   swiftmailer:
     none:
       formatter: social_swiftmailer
-      sender: social_swiftmailer
+      sender: swiftmailer

@@ -1,0 +1,21 @@
+uuid: 6f04e604-903b-4667-81b6-7d2a6c64d362
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_reason_for_failure
+    - paragraphs.paragraphs_type.reopened_ticket_instance
+  module:
+    - text
+id: paragraph.reopened_ticket_instance.field_reason_for_failure
+field_name: field_reason_for_failure
+entity_type: paragraph
+bundle: reopened_ticket_instance
+label: 'Reason for Failure'
+description: "Explain the reason for failure as described in the ticket comments by the person who reopened the ticket. Enter a new reason for every time the ticket was reopened. \r\n\r\nEx: “The event dates are showing the wrong time zones”"
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

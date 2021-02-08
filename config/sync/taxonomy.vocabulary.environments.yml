@@ -1,0 +1,8 @@
+uuid: aaf89999-9274-4baf-b51d-dcbaf03aaced
+langcode: en
+status: true
+dependencies: {  }
+name: Environment
+vid: environments
+description: 'The site environments.'
+weight: 0

@@ -1,0 +1,21 @@
+uuid: c9727ea2-7717-47a9-b205-5e5cdfbdfdcb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_notes
+    - node.type.reopened_ticket
+  module:
+    - text
+id: node.reopened_ticket.field_notes
+field_name: field_notes
+entity_type: node
+bundle: reopened_ticket
+label: Notes
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,10 +1,9 @@
 uuid: 38e5b972-2bdb-44a4-9d8c-eca32c0c890e
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.profile.table
-    - field.storage.profile.field_profile_organization
     - node.type.event
   module:
     - node
@@ -189,11 +188,14 @@ display:
             social_event_managers_send_email_action: social_event_managers_send_email_action
             views_bulk_operations_delete_entity: 0
             'entity:save_action:event_enrollment': 0
+            social_event_enrolments_export_enrollments_action: social_event_enrolments_export_enrollments_action
           preconfiguration:
             social_event_managers_delete_event_enrollment_action:
               label_override: Remove
             social_event_managers_send_email_action:
               label_override: Email
+            social_event_enrolments_export_enrollments_action:
+              label_override: Export
           plugin_id: social_views_bulk_operations_bulk_form_enrollments
         profile_entity_sortable:
           id: profile_entity_sortable
@@ -246,69 +248,6 @@ display:
           view_mode: table
           entity_type: profile
           plugin_id: profile_entity_sortable
-        field_profile_organization:
-          id: field_profile_organization
-          table: profile__field_profile_organization
-          field: field_profile_organization
-          relationship: profile
-          group_type: group
-          admin_label: ''
-          label: Organization
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: '-'
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
         created:
           id: created
           table: event_enrollment_field_data
@@ -631,8 +570,10 @@ display:
         - 'config:core.entity_view_display.profile.profile.autocomplete_item'
         - 'config:core.entity_view_display.profile.profile.compact'
         - 'config:core.entity_view_display.profile.profile.compact_notification'
+        - 'config:core.entity_view_display.profile.profile.compact_private_message'
         - 'config:core.entity_view_display.profile.profile.compact_teaser'
         - 'config:core.entity_view_display.profile.profile.default'
+        - 'config:core.entity_view_display.profile.profile.featured'
         - 'config:core.entity_view_display.profile.profile.hero'
         - 'config:core.entity_view_display.profile.profile.medium_teaser'
         - 'config:core.entity_view_display.profile.profile.search_index'
@@ -641,7 +582,6 @@ display:
         - 'config:core.entity_view_display.profile.profile.statistic'
         - 'config:core.entity_view_display.profile.profile.table'
         - 'config:core.entity_view_display.profile.profile.teaser'
-        - 'config:field.storage.profile.field_profile_organization'
   page_manage_enrollments:
     display_plugin: page
     id: page_manage_enrollments
@@ -670,8 +610,10 @@ display:
         - 'config:core.entity_view_display.profile.profile.autocomplete_item'
         - 'config:core.entity_view_display.profile.profile.compact'
         - 'config:core.entity_view_display.profile.profile.compact_notification'
+        - 'config:core.entity_view_display.profile.profile.compact_private_message'
         - 'config:core.entity_view_display.profile.profile.compact_teaser'
         - 'config:core.entity_view_display.profile.profile.default'
+        - 'config:core.entity_view_display.profile.profile.featured'
         - 'config:core.entity_view_display.profile.profile.hero'
         - 'config:core.entity_view_display.profile.profile.medium_teaser'
         - 'config:core.entity_view_display.profile.profile.search_index'
@@ -680,4 +622,3 @@ display:
         - 'config:core.entity_view_display.profile.profile.statistic'
         - 'config:core.entity_view_display.profile.profile.table'
         - 'config:core.entity_view_display.profile.profile.teaser'
-        - 'config:field.storage.profile.field_profile_organization'

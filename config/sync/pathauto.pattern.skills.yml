@@ -1,0 +1,23 @@
+uuid: 24729d78-3d0c-4c7b-8471-89bb7a4a9b49
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: skills
+label: Skills
+type: 'canonical_entities:taxonomy_term'
+pattern: 'skills/[term:name]'
+selection_criteria:
+  3b194af0-908a-4b37-b08c-bcc407262803:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      expertise: expertise
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 3b194af0-908a-4b37-b08c-bcc407262803
+selection_logic: and
+weight: -5
+relationships: {  }

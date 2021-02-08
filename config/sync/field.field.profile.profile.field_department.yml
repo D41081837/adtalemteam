@@ -1,0 +1,33 @@
+uuid: 2e31a66c-f548-487c-89db-f3501cb01ff3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_department
+    - profile.type.profile
+    - taxonomy.vocabulary.department
+  content:
+    - 'taxonomy_term:department:1b2eb287-51b2-4117-8e28-5c5281384de3'
+id: profile.profile.field_department
+field_name: field_department
+entity_type: profile
+bundle: profile
+label: Department
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    target_uuid: 1b2eb287-51b2-4117-8e28-5c5281384de3
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      department: department
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

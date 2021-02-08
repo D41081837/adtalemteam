@@ -1,0 +1,23 @@
+uuid: 81a50fe7-827a-4a05-817f-60e3e8c3c9c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_failed_forward
+    - node.type.reopened_ticket
+id: node.reopened_ticket.field_failed_forward
+field_name: field_failed_forward
+entity_type: node
+bundle: reopened_ticket
+label: 'Failed Forward?'
+description: 'Was this ticket failed forward?'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

@@ -11,7 +11,7 @@ src: data-src
 successClass: b-loaded
 validateDelay: 25
 placeholderSrc: 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='
-image_fields: false
+image_fields: {  }
 disabled_paths: /rss.xml
 _core:
   default_config_hash: h_4N5fL4QosXf3JITfYemQOmapK2xYFlwZGOv371LH8

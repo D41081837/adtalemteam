@@ -1,0 +1,18 @@
+uuid: edc6cd63-3011-41a8-85fc-a33182acf8a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.web_properties
+id: node.web_properties.title
+field_name: title
+entity_type: node
+bundle: web_properties
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

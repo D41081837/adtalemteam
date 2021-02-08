@@ -1,0 +1,75 @@
+uuid: 0064d141-a0ea-4d46-9fe0-734ff3108075
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.reopened_ticket_instance.field_affected_sites
+    - field.field.paragraph.reopened_ticket_instance.field_date_reopened
+    - field.field.paragraph.reopened_ticket_instance.field_environment
+    - field.field.paragraph.reopened_ticket_instance.field_reason_for_failure
+    - field.field.paragraph.reopened_ticket_instance.field_reason_for_reopening
+    - field.field.paragraph.reopened_ticket_instance.field_reopened_by
+    - paragraphs.paragraphs_type.reopened_ticket_instance
+  module:
+    - datetime
+    - text
+id: paragraph.reopened_ticket_instance.default
+targetEntityType: paragraph
+bundle: reopened_ticket_instance
+mode: default
+content:
+  field_affected_sites:
+    weight: 4
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_date_reopened:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_environment:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_reason_for_failure:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_reason_for_reopening:
+    weight: 5
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_reopened_by:
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+hidden:
+  created: true
+  status: true

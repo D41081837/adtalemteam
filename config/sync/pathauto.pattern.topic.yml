@@ -1,0 +1,22 @@
+uuid: 102df413-dbcb-4ef7-b281-c52833cdef95
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: topic
+label: Topic
+type: 'canonical_entities:node'
+pattern: 'topics/[node:title]'
+selection_criteria:
+  9b45f07a-572a-4fee-b3d2-fe8b0cb53d20:
+    id: node_type
+    bundles:
+      topic: topic
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 9b45f07a-572a-4fee-b3d2-fe8b0cb53d20
+selection_logic: and
+weight: -5
+relationships: {  }

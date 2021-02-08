@@ -1,0 +1,17 @@
+uuid: 210cbc33-57a5-4c9c-89ab-38d23405cf81
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.public_group
+  enforced:
+    config:
+      - user.role.analyst
+id: public_group-934f3993e
+label: Analyst
+weight: 7
+internal: true
+audience: outsider
+group_type: public_group
+permissions_ui: false
+permissions: {  }

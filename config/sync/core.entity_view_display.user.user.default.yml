@@ -2,7 +2,10 @@ uuid: 5565dddf-eae3-4370-b821-e2674a15bc40
 langcode: en
 status: true
 dependencies:
+  config:
+    - field.field.user.user.field_department
   module:
+    - dynamic_entity_reference
     - user
 _core:
   default_config_hash: c23cLvgm2S6S2e0bZFAhEzEx9xDdsEycGOiAUCZhJ9E
@@ -10,13 +13,40 @@ id: user.user.default
 targetEntityType: user
 bundle: user
 mode: default
-content: {  }
+content:
+  field_department:
+    weight: -4
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: dynamic_entity_reference_label
+    region: content
+  groups_type_flexible_group:
+    label: above
+    weight: -5
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  groups_type_secret_group:
+    label: above
+    weight: -5
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
 hidden:
+  business_profile_profiles: true
   groups: true
   groups_type_closed_group: true
   groups_type_open_group: true
   groups_type_public_group: true
+  linked_username: true
   member_for: true
+  private_message_link: true
   profile_main: true
   profile_profile: true
   profile_profiles: true

@@ -1,0 +1,17 @@
+uuid: 442d5616-9be8-4303-8bd9-1e66da172ae8
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.open_group
+  enforced:
+    config:
+      - user.role.developer
+id: open_group-6ca5962df
+label: Developer
+weight: 5
+internal: true
+audience: outsider
+group_type: open_group
+permissions_ui: false
+permissions: {  }

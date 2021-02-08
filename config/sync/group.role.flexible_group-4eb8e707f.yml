@@ -1,0 +1,17 @@
+uuid: 60d0a991-cb8f-47a6-bfa9-73a9c586c31e
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.flexible_group
+  enforced:
+    config:
+      - user.role.business
+id: flexible_group-4eb8e707f
+label: Business
+weight: 6
+internal: true
+audience: outsider
+group_type: flexible_group
+permissions_ui: false
+permissions: {  }

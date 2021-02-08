@@ -1,0 +1,28 @@
+uuid: 653ba4af-03aa-4650-b0bb-6861c0700fb3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_reopened_by
+    - paragraphs.paragraphs_type.reopened_ticket_instance
+id: paragraph.reopened_ticket_instance.field_reopened_by
+field_name: field_reopened_by
+entity_type: paragraph
+bundle: reopened_ticket_instance
+label: 'Reopened By'
+description: 'The person that marked the ticket as reopened.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: false
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

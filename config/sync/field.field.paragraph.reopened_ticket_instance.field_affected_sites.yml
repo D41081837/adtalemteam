@@ -1,0 +1,29 @@
+uuid: b3f5560a-7c1f-497e-ac74-84df418d81c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_affected_sites
+    - paragraphs.paragraphs_type.reopened_ticket_instance
+    - taxonomy.vocabulary.web_properties
+id: paragraph.reopened_ticket_instance.field_affected_sites
+field_name: field_affected_sites
+entity_type: paragraph
+bundle: reopened_ticket_instance
+label: 'Affected Sites'
+description: 'Select any web properties that this ticket is related to.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      web_properties: web_properties
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

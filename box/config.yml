@@ -92,7 +92,7 @@ drupalvm_cron_jobs: []
 # Drupal VM automatically creates a drush alias file in your ~/.drush folder if
 # this variable is 'true'.
 configure_drush_aliases: true
-drush_local_path: "{{ drupal_composer_install_dir }}/{{ drupal_composer_bin_dir }}/drush"
+drush_local_path: "{{ drupal_composer_install_dir }}/vendor/drush/drush/drush"
 drush_remote_path: "/var/www/adtalem.team/vendor/drush/drush/drush"
 drush_aliases_template_dir: "{{ post_provision_dir }}/templates"
 drush_aliases_host_template: "../../../../box/post_provision/templates/drupalvm.aliases.drushrc.php.j2"
@@ -205,7 +205,7 @@ extra_packages:
 
 # PHP Configuration. Currently-supported versions: 7.2, 7.3, 7.4.
 # See version-specific notes: http://docs.drupalvm.com/en/latest/configurations/php/
-php_version: "7.3"
+php_version: "7.2"
 php_install_recommends: no
 php_memory_limit: "4096M"
 php_display_errors: "On"
@@ -251,7 +251,6 @@ post_provision_setup_path: "{{ post_provision_dir }}/setup"
 post_provision_template_path: "{{ post_provision_dir }}/templates"
 post_provision_scripts:
   - "{{ post_provision_dir }}/post-provision.php"
-# - "{{ playbook_dir }}/../examples/scripts/configure-solr.sh"
 pre_provision_tasks_dir:
   - "{{ pre_provision_dir }}/pre-provision.yml"
 post_provision_tasks_dir:

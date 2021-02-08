@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - ctools
     - group
 _core:
   default_config_hash: rk2G0ozgUlKP7ic1RRjMcXUmeZxXUKPV-q-brekIKMc
@@ -10,7 +11,36 @@ id: group_content
 label: 'Group content'
 type: 'canonical_entities:group_content'
 pattern: 'group/[group_content:group:id]/[group_content:pretty-path-key]/[group_content:id]'
-selection_criteria: {  }
+selection_criteria:
+  321fb2f3-d355-4aad-9d42-c4b2dcbc052c:
+    id: 'entity_bundle:group_content'
+    bundles:
+      closed_group-group_invitation: closed_group-group_invitation
+      closed_group-group_membership: closed_group-group_membership
+      closed_group-group_node-event: closed_group-group_node-event
+      closed_group-group_node-topic: closed_group-group_node-topic
+      flexible_group-group_invitation: flexible_group-group_invitation
+      flexible_group-group_membership: flexible_group-group_membership
+      flexible_group-group_node-event: flexible_group-group_node-event
+      flexible_group-group_node-topic: flexible_group-group_node-topic
+      group_content_type_7fcb76fdf61a9: group_content_type_7fcb76fdf61a9
+      group_content_type_c8bae2527294c: group_content_type_c8bae2527294c
+      open_group-group_invitation: open_group-group_invitation
+      open_group-group_membership: open_group-group_membership
+      open_group-group_node-event: open_group-group_node-event
+      open_group-group_node-topic: open_group-group_node-topic
+      public_group-group_invitation: public_group-group_invitation
+      public_group-group_membership: public_group-group_membership
+      public_group-group_node-event: public_group-group_node-event
+      public_group-group_node-topic: public_group-group_node-topic
+      secret_group-group_invitation: secret_group-group_invitation
+      secret_group-group_membership: secret_group-group_membership
+      secret_group-group_node-event: secret_group-group_node-event
+      secret_group-group_node-topic: secret_group-group_node-topic
+    negate: false
+    context_mapping:
+      group_content: group_content
+    uuid: 321fb2f3-d355-4aad-9d42-c4b2dcbc052c
 selection_logic: and
 weight: -5
 relationships:

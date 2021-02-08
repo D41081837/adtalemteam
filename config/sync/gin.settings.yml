@@ -1,8 +1,20 @@
-preset_accent_color: blue
-preset_focus_color: gin
+preset_accent_color: custom
+preset_focus_color: custom
 enable_darkmode: false
 classic_toolbar: vertical
-icon_default: true
-icon_path: ''
+icon_default: false
+icon_path: 'public://adt-logo-gin.png'
 _core:
   default_config_hash: n_qpss6W5gVA3e38uErsrMTfKQDnBNhmW2U9qPl9b5w
+accent_color: '#34b6ed'
+focus_color: '#25a4dd'
+features:
+  node_user_picture: true
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: true
+favicon:
+  use_default: false
+  path: 'public://adt-favicon-gin.png'
+  mimetype: image/png
+icon_upload: ''

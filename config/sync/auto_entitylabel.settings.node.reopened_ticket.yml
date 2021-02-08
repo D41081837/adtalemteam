@@ -1,0 +1,9 @@
+status: 1
+pattern: '[node:field_ticket_number:value] - [node:field_ticket_title:value] - [node:created:custom:m d, y]'
+escape: true
+preserve_titles: true
+save: 1
+chunk: '50'
+dependencies:
+  config:
+    - node.type.reopened_ticket

@@ -2,8 +2,12 @@ uuid: 0a59188f-fcfd-41b7-811d-65484c29d8e1
 langcode: en
 status: true
 dependencies:
+  config:
+    - field.field.user.user.field_department
   module:
+    - dynamic_entity_reference
     - field_group
+    - profile
     - user
 third_party_settings:
   field_group:
@@ -11,19 +15,19 @@ third_party_settings:
       children:
         - account
       parent_name: ''
-      weight: 0
+      weight: 6
       label: 'Account information'
       format_type: fieldset
       format_settings:
-        label: 'Account information'
         required_fields: true
         id: ''
         classes: ''
+      region: hidden
     group_locale_settings:
       children:
         - timezone
       parent_name: ''
-      weight: 1
+      weight: 7
       format_type: fieldset
       format_settings:
         id: ''
@@ -31,6 +35,7 @@ third_party_settings:
         description: ''
         required_fields: true
       label: 'Locale settings'
+      region: hidden
 _core:
   default_config_hash: 0nZ2z-1drifgtazQ7sCHMq5tzD4JvQ5oYqoHa0z3koI
 id: user.user.default
@@ -43,8 +48,37 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  timezone:
+  business_profile_profiles:
+    type: profile_form
+    weight: 2
+    region: content
+    settings:
+      form_mode: default
+    third_party_settings: {  }
+  field_department:
+    type: dynamic_entity_reference_default
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      size: 40
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+  private_messages:
     weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  profile_profiles:
+    type: profile_form
+    weight: 3
+    region: content
+    settings:
+      form_mode: default
+    third_party_settings: {  }
+  timezone:
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -52,4 +86,4 @@ hidden:
   contact: true
   groups: true
   language: true
-  profile_profiles: true
+  path: true

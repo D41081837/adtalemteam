@@ -1,0 +1,17 @@
+uuid: 4f37a075-39b4-4c18-9556-307d2cb7848a
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.public_group
+  enforced:
+    config:
+      - user.role.business
+id: public_group-4eb8e707f
+label: Business
+weight: 6
+internal: true
+audience: outsider
+group_type: public_group
+permissions_ui: false
+permissions: {  }

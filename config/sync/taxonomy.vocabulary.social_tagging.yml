@@ -7,7 +7,7 @@ dependencies:
       - social_tagging
 _core:
   default_config_hash: lF5You2M70ZxxEb1N3CHpN3P8GAuWrxK72DyhDpZyXA
-name: 'Content tags'
+name: Tags
 vid: social_tagging
 description: 'Categories and terms used to tag content'
 weight: 0

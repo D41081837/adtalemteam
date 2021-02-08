@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.storage.profile.field_profile_interests
     - profile.type.profile
-    - taxonomy.vocabulary.interests
+    - taxonomy.vocabulary.expertise
 _core:
   default_config_hash: xbA9zUH--ckZQBMsENiLW0KhCihkRhxmn_2VilhO_hc
 id: profile.profile.field_profile_interests
@@ -13,7 +13,7 @@ field_name: field_profile_interests
 entity_type: profile
 bundle: profile
 label: Interests
-description: 'Separate multiple values by a comma.'
+description: "What skills are you interested in learning? Separate multiple values by a comma. \r\n\r\nEx. Custom modules, ADA compliance, NodeJS"
 required: false
 translatable: false
 default_value: {  }
@@ -22,7 +22,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      interests: interests
+      expertise: expertise
     sort:
       field: _none
     auto_create: true

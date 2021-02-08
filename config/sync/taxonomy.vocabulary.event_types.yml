@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 _core:
   default_config_hash: vUbmBPNXsJ-bcdrk0Eqsg4bZC-4dinRva9qSHlcwuac
-name: 'Event types'
+name: 'Event Type'
 vid: event_types
 description: 'Event types'
 weight: 0

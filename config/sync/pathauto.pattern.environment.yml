@@ -1,0 +1,23 @@
+uuid: 28666afb-6699-4140-b44b-32707fe0e9ba
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: environment
+label: Environment
+type: 'canonical_entities:taxonomy_term'
+pattern: 'environments/[term:name]'
+selection_criteria:
+  671c1dac-1e89-49fa-9095-38f400e502c0:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      environments: environments
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 671c1dac-1e89-49fa-9095-38f400e502c0
+selection_logic: and
+weight: -5
+relationships: {  }

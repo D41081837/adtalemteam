@@ -1,0 +1,76 @@
+uuid: 91209363-8736-4412-8a36-dbce4709fc65
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.reopened_ticket.field_developer
+    - field.field.node.reopened_ticket.field_failed_forward
+    - field.field.node.reopened_ticket.field_notes
+    - field.field.node.reopened_ticket.field_reopened_instance
+    - field.field.node.reopened_ticket.field_sprint_number
+    - field.field.node.reopened_ticket.field_ticket_number
+    - field.field.node.reopened_ticket.field_ticket_title
+    - node.type.reopened_ticket
+  module:
+    - dynamic_entity_reference
+    - paragraphs
+    - user
+id: node.reopened_ticket.teaser
+targetEntityType: node
+bundle: reopened_ticket
+mode: teaser
+content:
+  field_developer:
+    type: dynamic_entity_reference_label
+    weight: 3
+    region: content
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_reopened_instance:
+    type: paragraph_summary
+    weight: 4
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_sprint_number:
+    type: dynamic_entity_reference_label
+    weight: 2
+    region: content
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_ticket_number:
+    type: string
+    weight: 0
+    region: content
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_ticket_title:
+    type: string
+    weight: 1
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  field_failed_forward: true
+  field_notes: true
+  flag_follow_content: true
+  groups: true
+  groups_type_closed_group: true
+  groups_type_flexible_group: true
+  groups_type_open_group: true
+  groups_type_public_group: true
+  groups_type_secret_group: true
+  links: true
+  private_message_link: true
+  search_api_excerpt: true
+  social_tagging: true

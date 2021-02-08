@@ -12,8 +12,15 @@
         "goalgorilla/open_social": "~9.0",
         "php": "^7.2",
         "monolog/monolog": "^1.17",
-        "drush/drush": "^9.7",
-        "geerlingguy/drupal-vm": "^6.0"
+        "drush/drush": "9.7.2",
+        "geerlingguy/drupal-vm": "^6.0",
+        "drupal/auto_entitylabel": "^3.0@beta",
+        "drupal/inline_entity_form": "^1.0@RC",
+        "drupal/codesnippet": "^1.7",
+        "drupal/jira_rest": "4.x-dev@dev",
+        "drupal/smart_date": "^3.1",
+        "drupal/outlook_calendar": "^4.1",
+        "drupal/devel_php": "^1.3"
     },
     "repositories": {
         "drupal": {
@@ -89,6 +96,9 @@
         "patches": {
             "drupal/core": {
                 "mergeContexts has a dependency on CacheContextsManager": "https://www.drupal.org/files/issues/2019-11-25/drupal-core-2999148-8.patch"
+            },
+            "drupal/key": {
+                "Format a key value.": "https://www.drupal.org/files/issues/2019-03-03/2937873-44.patch"
             }
         }
     }

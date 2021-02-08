@@ -1,0 +1,23 @@
+uuid: 7c65a714-d027-4e5c-b554-368c68cf1bd4
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: sprint
+label: Sprint
+type: 'canonical_entities:taxonomy_term'
+pattern: 'sprints/[term:name]'
+selection_criteria:
+  e98fad6a-ad28-4992-b9a5-3a2627459371:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      sprint: sprint
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: e98fad6a-ad28-4992-b9a5-3a2627459371
+selection_logic: and
+weight: -5
+relationships: {  }

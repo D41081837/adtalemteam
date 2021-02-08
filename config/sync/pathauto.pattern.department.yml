@@ -1,0 +1,23 @@
+uuid: 8052cc26-8349-418e-8d36-e175f62c42b0
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: department
+label: Department
+type: 'canonical_entities:taxonomy_term'
+pattern: 'departments/[term:name]'
+selection_criteria:
+  3143bf10-fe5f-4045-a6a4-edf348ecb647:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      department: department
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 3143bf10-fe5f-4045-a6a4-edf348ecb647
+selection_logic: and
+weight: -5
+relationships: {  }
