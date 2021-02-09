@@ -5,6 +5,14 @@
     state: directory
     mode: 0755
 
+- name: Copy dashboard page into place.
+  template:
+    src: "{{ dashboard_template_dir }}/dashboard.html.j2"
+    dest: "{{ dashboard_install_dir }}/index.html"
+    mode: 0644
+    owner: "{{ drupalvm_user }}"
+    group: "{{ drupalvm_user }}"
+
 - name: Check if ssh key file is present.
   stat: "path={{ dashboard_install_dir | default('/var/www/dashboard') }}"
   register: dash_directory
@@ -58,16 +66,6 @@
     group: "{{ drupalvm_user }}"
   become: no
   when: secure_ssh_key_file.stat.exists
-
-# Copy custom bash_profile to home directory.
-- name: Copy bash_profile file from host into Drupal VM.
-  copy:
-    src: "{{ bash_profile_path | default('setup/bash_profile') }}"
-    dest: "{{ bash_profile_dest | default('/home/vagrant/.bash_profile') }}"
-    mode: 0644
-    owner: "{{ drupalvm_user }}"
-    group: "{{ drupalvm_user }}"
-  become: no
 
 - name: Include vars of config yaml file into vm_config
   include_vars:

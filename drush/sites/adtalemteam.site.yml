@@ -1,41 +1,41 @@
 # Ansible managed
 dev:
-   host: 'dev.adtalem.team'
+   host: dev.adtalem.team
    options: {  }
    paths:
       drush-script: /var/www/dev.adtalem.team/vendor/drush/drush/drush
-   root: '/var/www/dev.adtalem.team/html'
-   uri: 'adtalemteam.dev'
+   root: /var/www/dev.adtalem.team/html
+   uri: adtalemteam.dev
    user: 'root'
    ssh:
       options: '-o "SendEnv PHP_IDE_CONFIG PHP_OPTIONS XDEBUG_CONFIG" -o PasswordAuthentication=no -i "${env.home}/.ssh/secure_private_key"'
 local:
-   host: 'adtalemteam.local'
+   host: adtalemteam.local
    options: {  }
    paths:
       drush-script: /var/www/adtalemteam/vendor/drush/drush/drush
-   root: '/var/www/adtalemteam/html'
-   uri: 'local.adtalemteam'
-   user: 'vagrant'
+   root: /var/www/adtalemteam/html
+   uri: local.adtalemteam
+   user: vagrant
    ssh:
       options: '-o "SendEnv PHP_IDE_CONFIG PHP_OPTIONS XDEBUG_CONFIG" -o PasswordAuthentication=no -i "${env.home}/.vagrant.d/insecure_private_key"'
 live:
-   host: 'adtalem.team'
+   host: adtalem.team
    options: {  }
    paths:
       drush-script: /var/www/adtalem.team/vendor/drush/drush/drush
-   root: '/var/www/adtalem.team/html'
-   uri: 'adtalemteam.live'
-   user: 'root'
+   root: /var/www/adtalem.team/html
+   uri: adtalemteam.live
+   user: root
    ssh:
       options: '-o "SendEnv PHP_IDE_CONFIG PHP_OPTIONS XDEBUG_CONFIG" -o PasswordAuthentication=no -i "${env.home}/.ssh/secure_private_key"'
 test:
-   host: 'stg.adtalem.team'
+   host: stg.adtalem.team
    options: {  }
    paths:
       drush-script: /var/www/stg.adtalem.team/vendor/drush/drush/drush
-   root: '/var/www/stg.adtalem.team/html'
-   uri: 'adtalemteam.test'
-   user: 'root'
+   root: /var/www/stg.adtalem.team/html
+   uri: adtalemteam.test
+   user: root
    ssh:
       options: '-o "SendEnv PHP_IDE_CONFIG PHP_OPTIONS XDEBUG_CONFIG" -o PasswordAuthentication=no -i "${env.home}/.ssh/secure_private_key"'

@@ -1,0 +1,10 @@
+dev:
+  host: 68.183.57.65
+  options: {  }
+  paths:
+    drush-script: /var/www/adtalem.team/vendor/drush/drush/drush
+  root: /var/www/adtalem.team/html
+  ssh:
+    options: '-o PasswordAuthentication=no -i "~/.ssh/secure_private_key"'
+  uri: adtalemteam.live
+  user: root

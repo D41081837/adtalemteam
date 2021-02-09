@@ -26,7 +26,7 @@ function __refresh_site() {
   echo "---------------------------------------------------------------"
   echo "Syncing the database from production..."
   echo ""
-  /var/www/adtalemteam/vendor/drush/drush/drush @adtalemteam.local sql-drop -y && /var/www/adtalemteam/vendor/drush/drush/drush sql-sync -y adtalemteam.live @self
+  /var/www/adtalemteam/vendor/drush/drush/drush @self sql-drop -y && /var/www/adtalemteam/vendor/drush/drush/drush sql-sync -y @live.dev @self
   echo "Synced site database: $site"
   echo ""
   echo -e "${BLUE}File Sync${NC}"

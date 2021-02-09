@@ -4,7 +4,8 @@
 #   - geerlingguy/centos8
 #   - geerlingguy/debian10
 #   - geerlingguy/ubuntu1804
-vagrant_box: geerlingguy/drupal-vm
+vagrant_box: geerlingguy/ubuntu1804
+workspace: /root
 
 vagrant_user: vagrant
 vagrant_synced_folder_default_type: virtualbox
@@ -27,8 +28,8 @@ vagrant_synced_folders:
     destination: /var/www/adtalemteam
     type: virtualbox
     options_override:
-      owner: "vagrant"
-      group: "www-data"
+      owner: vagrant
+      group: www-data
       mount_options: ["dmode=775,fmode=764"]
     create: true
   - local_path: .
@@ -63,7 +64,7 @@ drupal_db_backend: mysql
 # composer based site deployment strategy.
 drupal_build_composer: false
 drupal_composer_path: false
-drupal_composer_install_dir: "/var/www/adtalemteam"
+drupal_composer_install_dir: /var/www/adtalemteam
 drupal_composer_dependencies:
   - "drush/drush:^9"
   - "drupal/devel:^2.0"
@@ -77,7 +78,7 @@ drupal_build_composer_project: false
 drupal_install_site: false
 
 # Required Drupal settings.
-drupal_domain: "adtalem.team"
+drupal_domain: adtalem.team
 drupal_core_path: "{{ drupal_composer_install_dir }}/html"
 drupal_core_owner: "{{ drupalvm_user }}"
 drupal_db_user: "{{ vagrant_machine_name }}"
@@ -93,7 +94,7 @@ drupalvm_cron_jobs: []
 # this variable is 'true'.
 configure_drush_aliases: true
 drush_local_path: "{{ drupal_composer_install_dir }}/vendor/drush/drush/drush"
-drush_remote_path: "/var/www/adtalem.team/vendor/drush/drush/drush"
+drush_remote_path: /var/www/adtalem.team/vendor/drush/drush/drush
 drush_aliases_template_dir: "{{ post_provision_dir }}/templates"
 drush_aliases_host_template: "../../../../box/post_provision/templates/drupalvm.aliases.drushrc.php.j2"
 drush_aliases_host_template_yml: "../../../../box/post_provision/templates/drupalvm.aliases.yml.j2"
@@ -103,9 +104,9 @@ drush_aliases_guest_template_yml: "../../../../box/post_provision/templates/drup
 # Helper variable to configure the PHP-FPM connection for each Apache
 # VirtualHost in the `apache_vhosts` list.
 apache_vhost_php_fpm_parameters: |
-    <FilesMatch \.php$>
-      SetHandler "proxy:fcgi://{{ php_fpm_listen }}"
-    </FilesMatch>
+  <FilesMatch \.php$>
+    SetHandler "proxy:fcgi://{{ php_fpm_listen }}"
+  </FilesMatch>
 
 # Apache VirtualHosts. Add one for each site you are running inside the VM. For
 # multisite deployments, you can point multiple servernames at one documentroot.
@@ -205,9 +206,9 @@ extra_packages:
 
 # PHP Configuration. Currently-supported versions: 7.2, 7.3, 7.4.
 # See version-specific notes: http://docs.drupalvm.com/en/latest/configurations/php/
-php_version: "7.2"
+php_version: "7.3"
 php_install_recommends: no
-php_memory_limit: "4096M"
+php_memory_limit: "512M"
 php_display_errors: "On"
 php_display_startup_errors: "On"
 php_realpath_cache_size: "1024K"
@@ -235,12 +236,17 @@ php_packages_extra:
 php_enable_php_fpm: true
 php_fpm_listen: "127.0.0.1:9000"
 
+# Disable APC to avoid odd caching issues.
+php_enable_apc: false
+
+# Composer configuration.
+composer_version: '1.10.7'
+
 composer_path: /usr/bin/composer
 composer_home_path: "/home/{{ drupalvm_user }}/.composer"
 composer_home_owner: "{{ drupalvm_user }}"
 composer_home_group: "{{ drupalvm_user }}"
-composer_global_packages:
-  - { name: hirak/prestissimo, release: '^0.3' }
+composer_global_packages: []
 
 # Run specified scripts before or after VM is provisioned. Use {{ playbook_dir }}
 # to reference the provisioning/ folder in Drupal VM or {{ config_dir }} to

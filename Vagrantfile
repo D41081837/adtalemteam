@@ -6,6 +6,10 @@ ENV['DRUPALVM_PROJECT_ROOT'] = "#{__dir__}"
 # placed your config.yml file.
 ENV['DRUPALVM_CONFIG_DIR'] = "box"
 
+# The relative path from the project root to the config directory where you
+# placed your config.yml file.
+ENV['DRUPALVM_PRIVATE_KEY'] = "~/.vagrant.d/insecure_private_key"
+
 # The relative path from the project root to the directory where Drupal VM is located.
 ENV['DRUPALVM_DIR'] = "vendor/geerlingguy/drupal-vm"
 
