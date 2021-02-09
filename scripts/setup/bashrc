@@ -1,6 +1,3 @@
-source ~/.profile
-source ~/.setup_vars
-
 #   -------------------------------
 #   1.  ENVIRONMENT CONFIGURATION
 #   -------------------------------
@@ -70,3 +67,4 @@ help()
    echo "sync {SITE}.local       Refresh a single on local environment."
    echo
 }
+SSH_HOME=/var/www/adtalemteam && [ -e $SSH_HOME ] && cd $SSH_HOME

@@ -33,7 +33,10 @@ function __refresh_site() {
   echo "---------------------------------------------------------------"
   echo "Syncing the files from production..."
   echo ""
-  /var/www/adtalemteam/vendor/drush/drush/drush rsync -y @adtalemteam.live:%files/ @self:%files
+  cd /var/www/adtalemteam/html/sites/default/files
+  wget https://www.adtalem.team/sites/default/files/adtal3mfiles.tar.gz
+  tar -xvzf adtal3mfiles.tar.gz
+  rm -rf adtal3mfiles.tar.gz
   echo "Synced site files: $site"
   echo ""
   echo ""
