@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_form_mode.user.register
-    - field.field.user.user.field_department
   module:
     - path
     - profile
@@ -42,7 +41,6 @@ content:
 hidden:
   business_profile_profiles: true
   contact: true
-  field_department: true
   groups: true
   language: true
   timezone: true

@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.private_message_author
-    - field.field.user.user.field_department
   module:
     - user
 _core:
@@ -69,7 +68,6 @@ content:
     third_party_settings: {  }
 hidden:
   business_profile_profiles: true
-  field_department: true
   member_for: true
   private_message_link: true
   profile_profiles: true

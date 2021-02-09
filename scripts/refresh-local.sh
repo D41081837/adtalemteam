@@ -33,6 +33,12 @@ function __refresh_site() {
   echo "---------------------------------------------------------------"
   echo "Syncing the files from production..."
   echo ""
+  ssh -t root@68.183.57.65 "cd /var/www/adtalem.team/files/private && rm -rf adtal3mprivate.tar.gz && tar -pczf adtal3mprivate.tar.gz * && chmod 777 adtal3mprivate.tar.gz && mv adtal3mprivate.tar.gz /var/www/adtalem.team/html/sites/default/files"
+  cd /var/www/adtalemteam/files/private
+  wget https://www.adtalem.team/sites/default/files/adtal3mprivate.tar.gz
+  tar -xvzf adtal3mprivate.tar.gz
+  rm -rf adtal3mprivate.tar.gz
+  ssh -t root@68.183.57.65 "cd /var/www/adtalem.team/html/sites/default/files && rm -rf adtal3mfiles.tar.gz && tar -pczf adtal3mfiles.tar.gz * && chmod 777 adtal3mfiles.tar.gz"
   cd /var/www/adtalemteam/html/sites/default/files
   wget https://www.adtalem.team/sites/default/files/adtal3mfiles.tar.gz
   tar -xvzf adtal3mfiles.tar.gz
@@ -41,11 +47,13 @@ function __refresh_site() {
   echo ""
   echo ""
   echo -e "${BLUE}Update Database${NC}"
-  echo "---------------------------------------------------------------"
+  echo "--
+  -------------------------------------------------------------"
   echo "Updating the site configuration in the database..."
   echo ""
+  cd /var/www/adtalemteam/html
   /var/www/adtalemteam/vendor/drush/drush/drush updb -y -l "$site.local"
-  /var/www/adtalemteam/vendor/drush/drush/drush cim sync -y -l "$site.local"
+  /var/www/adtalemteam/vendor/drush/drush/drush cex sync -y -l "$site.local"
   /var/www/adtalemteam/vendor/drush/drush/drush cr -l "$site.local"
   /var/www/adtalemteam/vendor/drush/drush/drush cim sync -y -l "$site.local"
   /var/www/adtalemteam/vendor/drush/drush/drush uli -l "$site.local"
@@ -71,7 +79,7 @@ echo -e "${BLUE}Install Site${NC}"
 echo "---------------------------------------------------------------"
 echo "Installing packages with Composer..."
 echo ""
-composer install --prefer-dist
+
 __refresh_site "adtalemteam"
 
 COMPLETED=$(date +"%R %Z")

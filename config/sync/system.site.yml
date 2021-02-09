@@ -1,11 +1,11 @@
 uuid: 49b78228-60ac-421f-8fd0-08fa87018ac3
 name: 'Adtalem Web Technologies Team'
-mail: robert.shell@adtalem.com
+mail: noreply@adtalem.com
 slogan: ''
 page:
-  403: ''
-  404: ''
-  front: /stream
+  403: /user/login
+  404: /user/login
+  front: /user/login
 admin_compact_mode: false
 weight_select_max: 100
 langcode: en

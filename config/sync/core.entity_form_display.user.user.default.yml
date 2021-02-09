@@ -2,10 +2,7 @@ uuid: 0a59188f-fcfd-41b7-811d-65484c29d8e1
 langcode: en
 status: true
 dependencies:
-  config:
-    - field.field.user.user.field_department
   module:
-    - dynamic_entity_reference
     - field_group
     - profile
     - user
@@ -54,16 +51,6 @@ content:
     region: content
     settings:
       form_mode: default
-    third_party_settings: {  }
-  field_department:
-    type: dynamic_entity_reference_default
-    weight: 1
-    region: content
-    settings:
-      match_operator: CONTAINS
-      size: 40
-      placeholder: ''
-      match_limit: 10
     third_party_settings: {  }
   private_messages:
     weight: 0

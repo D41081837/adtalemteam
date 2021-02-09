@@ -1,0 +1,21 @@
+uuid: 4162b621-1f21-4226-abdf-85b8ab59b5d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_change_key
+    - node.type.outlook_events
+_core:
+  default_config_hash: 3LL1ZA7IVN45Ecnc37FzINRrKjX-QtdhJsoA4nUllgA
+id: node.outlook_events.field_change_key
+field_name: field_change_key
+entity_type: node
+bundle: outlook_events
+label: 'Change Key'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

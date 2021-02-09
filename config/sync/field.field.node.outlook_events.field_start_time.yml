@@ -1,0 +1,23 @@
+uuid: a3169e87-f66b-4e89-95ae-f02b2cff7330
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_start_time
+    - node.type.outlook_events
+  module:
+    - datetime
+_core:
+  default_config_hash: EC-VChbYE22L42_2syS0WBi2RaEzXJoVD3ayMhrXsLQ
+id: node.outlook_events.field_start_time
+field_name: field_start_time
+entity_type: node
+bundle: outlook_events
+label: 'Start Time'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

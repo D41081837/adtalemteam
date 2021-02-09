@@ -1,0 +1,21 @@
+uuid: 6bda1239-78e8-4ce5-92a8-f00d7f35c47d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_organizer
+    - node.type.outlook_events
+_core:
+  default_config_hash: wGLBZzVu1lTI_m8eScaa_f4HIgCISh8GgXzP9ODLO-8
+id: node.outlook_events.field_event_organizer
+field_name: field_event_organizer
+entity_type: node
+bundle: outlook_events
+label: 'Event Organizer'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -2,10 +2,7 @@ uuid: 5565dddf-eae3-4370-b821-e2674a15bc40
 langcode: en
 status: true
 dependencies:
-  config:
-    - field.field.user.user.field_department
   module:
-    - dynamic_entity_reference
     - user
 _core:
   default_config_hash: c23cLvgm2S6S2e0bZFAhEzEx9xDdsEycGOiAUCZhJ9E
@@ -14,14 +11,6 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
-  field_department:
-    weight: -4
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: dynamic_entity_reference_label
-    region: content
   groups_type_flexible_group:
     label: above
     weight: -5

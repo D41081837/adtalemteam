@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.full
-    - field.field.user.user.field_department
   module:
     - user
 _core:
@@ -32,7 +31,6 @@ content:
     type: entity_reference_label
 hidden:
   business_profile_profiles: true
-  field_department: true
   groups: true
   groups_type_closed_group: true
   groups_type_open_group: true

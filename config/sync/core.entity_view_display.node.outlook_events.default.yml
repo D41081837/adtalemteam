@@ -1,0 +1,120 @@
+uuid: 9e4f50aa-cedb-4fed-a9e3-504ab56461ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.outlook_events.body
+    - field.field.node.outlook_events.field_change_key
+    - field.field.node.outlook_events.field_end_time
+    - field.field.node.outlook_events.field_event_id
+    - field.field.node.outlook_events.field_event_organizer
+    - field.field.node.outlook_events.field_start_time
+    - node.type.outlook_events
+  module:
+    - datetime
+    - text
+    - user
+_core:
+  default_config_hash: Xtoqcfla3_yO9D1gP7j0o490L579lRfbPoyXNT3F13A
+id: node.outlook_events.default
+targetEntityType: node
+bundle: outlook_events
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_end_time:
+    type: datetime_default
+    weight: 3
+    region: content
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+  field_event_organizer:
+    type: string
+    weight: 4
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_start_time:
+    type: datetime_default
+    weight: 2
+    region: content
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+  flag_follow_content:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  groups:
+    label: above
+    weight: -5
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  groups_type_closed_group:
+    label: above
+    weight: -5
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  groups_type_flexible_group:
+    label: above
+    weight: -5
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  groups_type_open_group:
+    label: above
+    weight: -5
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  groups_type_public_group:
+    label: above
+    weight: -5
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  groups_type_secret_group:
+    label: above
+    weight: -5
+    region: content
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_change_key: true
+  field_event_id: true
+  private_message_link: true
+  search_api_excerpt: true
+  social_tagging: true
